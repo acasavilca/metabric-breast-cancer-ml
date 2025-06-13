@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GT CS7641 ML Project Page</title>
+    <title>Our GT CS7641 ML Project Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,32 +11,94 @@
         <h1>CS7641 Machine Learning - Group 3 Project</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="results.html">Results</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#libraries">Libraries</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Welcome!</h2>
-            <p>This is the official project page for our CS7641 Machine Learning Group 3 project at Georgia Tech.</p>
-            <p>Here you will find information about our research, methodologies, and findings.</p>
-            <img src="images/ml_logo.png" alt="Machine Learning Logo" style="max-width: 300px;">
-        </section>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Breast cancer remains one of the most prevalent and life-threatening forms of cancer among women worldwide. Despite advancements in early detection and treatment, predicting patient outcomes and tailoring personalized therapies remains difficult due to the biological complexity of the disease. One of the key challenges in breast cancer management is the high degree of heterogeneity at both the clinical and molecular levels, which complicates prognosis and treatment decisions. However, gene expression profiling has emerged as a powerful tool to uncover the biological underpinnings of breast cancer heterogeneity and to predict clinical outcomes. The landmark study by Van ’t Veer et al. [1] demonstrated that gene expression signatures could be used to predict breast cancer prognosis, laying the groundwork for molecular subtyping and personalized therapy. Building on this, large-scale analyses, such as Curtis et al. [2], revealed novel breast cancer subgroups based on combined genomic and transcriptomic data, underscoring the complexity of the disease. Further research has highlighted the relationship between gene coexpression networks and clinical outcomes. For instance, Clarke et al. [3] performed large-scale coexpression analyses and found that specific transcriptional networks were significantly correlated with breast cancer survival. Such findings emphasize the value of moving beyond single-gene analyses toward understanding complex gene-gene interactions.</p>
+            <p>Building on this body of work, this project leverages the <strong>METABRIC dataset</strong> [4], introduced by Curtis et al. [2], to build machine learning models for patient classification and outcome prediction. The dataset includes gene expression profiles and clinical data for nearly 2,000 breast cancer patients. The dataset provides detailed information on over 600 genes as well as clinical variables such as patient age, tumor size, hormone receptor status, and survival outcomes.</p>
+            <!--<img src="images/ml_logo.png" alt="Machine Learning Logo" style="max-width: 300px;">-->
+            </section>
 
-        <section>
-            <h2>Our Mission</h2>
+        <section id="methods">
+            <h2>Methods</h2>
+
+            <ul>
+                <li>
+                    <strong>Pre-processing:</strong>
+                    <ul>
+                        <li>Imputation of missing data</li>
+                        <li>Outlier treatment using IQR clipping</li>
+                        <li>Scaling/Normalizing the data</li>
+                        <li>Feature selection: Selecting top N highly variable genes [N = {10, 20, 30}]</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>EDA [Unsupervised learning component]:</strong>
+                    <ul>
+                        <li>Dimensionality reduction using PCA/UMAP</li>
+                        <li>Visualize the extent of separation of the classes using the UMAP, colored based on ground-truth</li>
+                        <li>Clustering the cohort into groups [using Leiden/Louvain/K-means] followed by heatmap visualization</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>Modeling [Supervised learning component]:</strong>
+                    <ul>
+                        <li>Logistic regression</li>
+                        <li>Tree-based models
+                            <ul>
+                                <li>Decision Tree</li>
+                                <li>Random Forest</li>
+                                <li>Gradient Boosted Decision Trees</li>
+                            </ul>
+                        </li>
+                        <li>Kernel-based models (Support Vector Machine)</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>Metrics:</strong>
+                    <ul>
+                        <li>Accuracy</li>
+                        <li>AUROC</li>
+                        <li>Precision</li>
+                        <li>Recall</li>
+                        <li>F1-score</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>Explainability of models:</strong>
+                    <ul>
+                        <li>In-built functions of every model (Coefficients of logistic regression or ‘feature_importance’ functions for tree-based models)</li>
+                        <li>SHAPLEY values (SHAP analysis)</li>
+                    </ul>
+                </li>
+            </ul>
             <p>To explore and implement cutting-edge machine learning algorithms to solve complex problems.</p>
-        </section>
+        <section id="libraries">
+            <h2>Libraries</h2>
+            <ul>
+                <li>Numpy</li>
+                <li>Matplotlib or Seaborn</li>
+                <li>Scanpy</li>
+                <li>Scikit-learn</li>
+                <li>SHAP</li>
+            </ul>
+            </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 CS7641 ML Group 3. All rights reserved.</p>
+        <p>Created by CS7641-ML Group 3 on June 13, 2025</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
