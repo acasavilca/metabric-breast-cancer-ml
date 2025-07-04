@@ -80,61 +80,257 @@
         <section id="eda">
             <h2>Exploratory Data Analysis</h2>
 
-            <strong> Clinical data </strong>
+                <strong> Clinical Data </strong>
 
-            <p>
-                <u>Histograms:</u> We plot stacked histograms for each column in the clinical areas subset to visually assess if these variables differ by breast cancer subtype. In doing this, we hoped to achieve the following two goals: (a) find clinical variables that differ between subtypes by visually spotting shifts in distributions between classes and (b) guide feature selection e.g., if distributions for all subtypes look identical, that feature may have low predictive power. In the interest of space, we only present results for the most relevant histograms.
-            </p>
+                    <p>
+                        <u>Histograms:</u> We plot stacked histograms for each column in the clinical areas subset to visually assess if these variables differ by breast cancer subtype. In doing this, we hoped to achieve the following two goals: (a) find clinical variables that differ between subtypes by visually spotting shifts in distributions between classes and (b) guide feature selection e.g., if distributions for all subtypes look identical, that feature may have low predictive power. In the interest of space, we only present results for the most relevant histograms.
+                    </p>
 
-            <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                <img src="figures/histogram-age-at-diagnosis.png" height="33%" width="33%">
-                <img src="figures/histogram-mutation-count.png" height="33%" width="33%">
-            </div>
+                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
+                        <img src="figures/histogram-age-at-diagnosis.png" height="33%" width="33%">
+                        <img src="figures/histogram-mutation-count.png" height="33%" width="33%">
+                    </div>
 
-            <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                <img src="figures/histogram-overall-survival-months.png" height="33%" width="33%">
-                <img src="figures/histogram-tumour-size.png" height="33%" width="33%">
-            </div>
+                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
+                        <img src="figures/histogram-overall-survival-months.png" height="33%" width="33%">
+                        <img src="figures/histogram-tumour-size.png" height="33%" width="33%">
+                    </div>
 
-            <ul>
-                <li>
-                    Age at Diagnosis: For the “Basal” subtype, the age range is skewed to the left i.e., most of the data points are between 40 and 70. However, for the “LumB” subtype, we see that most of the data points are between 55 and 95.
-                </li>
-                <li>
-                    Mutation count - For the ‘Normal’ and ‘Claudin-low’ subtypes, mutation count is skewed to the left. However, for the other subtypes, we see higher mutation counts.
-                </li>
-                <li>
-                    Overall survival months: We see that this attribute is relatively identically distributed across all subtypes (skewed to the left). However, for the “Basal” subtype, the number of months is uniformly distributed, indicating that patients with this type are likely to survive longer.
-                </li>
-                <li>
-                    Tumour size: We see that tumour size is identically distributed across all subtypes, which tells us that this attribute is independent of subtype.
-                </li>
-            </ul>
-            
+                    <ul>
+                        <li>
+                            Age at Diagnosis: For the “Basal” subtype, the age range is skewed to the left i.e., most of the data points are between 40 and 70. However, for the “LumB” subtype, we see that most of the data points are between 55 and 95.
+                        </li>
+                        <li>
+                            Mutation count - For the ‘Normal’ and ‘Claudin-low’ subtypes, mutation count is skewed to the left. However, for the other subtypes, we see higher mutation counts.
+                        </li>
+                        <li>
+                            Overall survival months: We see that this attribute is relatively identically distributed across all subtypes (skewed to the left). However, for the “Basal” subtype, the number of months is uniformly distributed, indicating that patients with this type are likely to survive longer.
+                        </li>
+                        <li>
+                            Tumour size: We see that tumour size is identically distributed across all subtypes, which tells us that this attribute is independent of subtype.
+                        </li>
+                    </ul>
+                    
 
-            
+                    <p>
+                        <u>Boxplots:</u> 
+                    </p>
 
-            <p>
-                <u>Boxplots:</u> 
-            </p>
+                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
+                        <img src="figures/boxplot-age-at-diagnosis.png" height="33%" width="33%">
+                        <img src="figures/boxplot-mutation-count.png" height="33%" width="33%">
+                    </div>
 
-            <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                <img src="figures/boxplot-age-at-diagnosis.png" height="33%" width="33%">
-                <img src="figures/boxplot-mutation-count.png" height="33%" width="33%">
-            </div>
+                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
+                        <img src="figures/boxplot-overall-survival-months.png" height="33%" width="33%">
+                        <img src="figures/boxplot-tumour-size.png" height="33%" width="33%">
+                    </div>
 
-            <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                <img src="figures/boxplot-overall-survival-months.png" height="33%" width="33%">
-                <img src="figures/boxplot-tumour-size.png" height="33%" width="33%">
-            </div>
+                    <p>
+                        <u>Pair Plots:</u> 
+                    </p>
+                    <img src="figures/pairplot.png" height="75%" width="75%">
 
-            <p>
-                <u>Pair Plots:</u> 
-            </p>
+                    <br> <br>
+                
+                <strong> Genes Data </strong>
 
-            <img src="figures/pairplot.png" height="75%" width="75%">
+                    <p>
+                        <u>Principal Components Analysis (PCA): </u>
+                    </p>
+                    <img src="figures/pca-genes.png" height="33%" width="33%">
+
+                    <p>
+                        <u> Uniform Manifold Approximation and Projection (UMAP): </u>
+                    </p>
+                    <img src="figures/umap-genes.png" height="33%" width="33%">
+
+                    <p>
+                        <u> Clustering:</u> This optional step was taken to assess the quality of genes data in addition to the above visual steps. Our motive here was to see how easy it is to separate the 7 classes we have with purely genes data. In general, the number of genes present in such experiments are generally in the order of 10000. K-means, GMM, and any other distance metric based clustering algorithms may fail to perform well. In such cases, other approaches for clustering methods such as  Leiden and Louvain clustering (graph based approaches) are highly recommended. For simplicity, we tried K-means clustering on the 489 genes features present. Metrics such as adjusted rand index (ARI), normalized mutual information (NMI), homogeneity and completeness scores, and Fowlkes-Mallows index were computed to understand the quality of the clustering.
+                    </p>
+                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
+                        <img src="figures/umap-kmeans.png" height="33%" width="33%">
+                        <img src="figures/umap-gmm.png" height="33%" width="33%">
+                    </div>
+
+                    <table border="1" cellpadding="5" cellspacing="0">
+                        <thead>
+                            <tr>
+                            <th>Metric</th>
+                            <th>K-Means</th>
+                            <th>GMM</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ARI</td>
+                                <td>0.20</td>
+                                <td>0.17</td>
+                            </tr>
+                            <tr>
+                                <td>NMI</td>
+                                <td>0.30</td>
+                                <td>0.18</td>
+                            </tr>
+                            <tr>
+                                <td>Homogeneity</td>
+                                <td>0.31</td>
+                                <td>0.16</td>
+                            </tr>
+                            <tr>
+                                <td>Completeness</td>
+                                <td>0.30</td>
+                                <td>0.20</td>
+                            </tr>
+                            <tr>
+                                <td>V-Measure</td>
+                                <td>0.30</td>
+                                <td>0.18</td>
+                            </tr>
+                            <tr>
+                                <td>Fowlkes-Mallows</td>
+                                <td>0.37</td>
+                                <td>0.41</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
         </section>
+
+        <section id="feature-preprocessing">
+            <h2>Feature Pre-processing</h2>
+
+            <p>
+                A robust feature preprocessing pipeline is created to handle missing values and outlier presence. Prior to any form of feature pre-processing, the dataset was split into training and test dataset (80% development dataset and 20% testing), to avoid data leakage.
+            </p>
+
+            <strong> Clinical Data </strong>
+
+                <ol>
+                    <li>
+                        Imputation: The clinical data is a mixture of numerical (float64) and categorical (object) data types. They need to be handled separately. As clinical data is often MNAR [missing not at random] type, it can get tricky in choosing the best imputation method. Keeping this nature of MNAR data, we chose KNN imputer for numerical features and Mode imputer for categorical features.
+                    </li>
+                    <br>
+
+                    <li>
+                        Outlier Treatment:
+                    </li>
+                    <br>
+
+                    <li>
+                        Scaling:
+                    </li>
+                    <br>
+
+                    <li>
+                        Correlation handling: To prevent models from failing and not reaching convergence due to singularity, we remove features that show linear dependence on other features, using correlation scores.
+                    </li>
+                    <br>
+
+                    <li>
+                        One-hot encoding of categorical data: As some models can not handle string forms of data, they need to be converted into a one-hot encoded form.
+                    </li>
+
+                </ol>
+            
+            <strong> Genes Data </strong>
+                <p>
+                    As the provided mRNA scores are already in the z-scores format, no data cleaning steps were applied on them.
+                </p>
+            
+            <strong>Feature Selection using Mutual Information</strong>
+                <p>
+                    The cleaned clinical data and genes data are combined, giving us a huge number of features. Out of nearly 600 features, top 50 features were selected using the mutual information feature selector.
+                </p>
+
+        </section>
+
+        <section id="model-building">
+            <h2>Model Building</h2>
+
+                <strong> Linear Models </strong>
+
+                    <ul>
+                        <li>
+                            Logistic Regression
+                        </li>
+                    </ul>
+                
+                <strong> Tree-based Models </strong>
+
+                    <ul>
+                        <li>
+                            Decision Tree
+                        </li>
+                        <br>
+
+                        <li>
+                            Random Forest
+                        </li>
+                        <br>
+
+                        <li>
+                            Gradient-boosted Decision Trees
+                        </li>
+                    </ul>
+                
+                <strong> Kernel-based Models </strong>
+
+                    <ul>
+                        <li>
+                            Support Vector Machine
+                        </li>
+                    </ul>
+        </section>
+
+        <section id="metrics">
+            <h2>Evaluation Metrics</h2>
+
+                <ul>
+                    <li>
+                        AUROC
+                    </li>
+                    <br>
+
+                    <li>
+                        Precision
+                    </li>
+                    <br>
+
+                    <li>
+                        Recall
+                    </li>
+                    <br>
+
+                    <li>
+                        F1-Score
+                    </li>
+                    <br>
+
+                    <li>
+                        Confusion Matrix
+                    </li>
+                </ul>
+        
+        <section id="explainability">
+            <h2>Model Explainability</h2>
+                <ul>
+                    <li>
+                       Logistic regression: Using coefficients (magnitude and direction) to understand the contribution of each feature to the final prediction
+                    </li>
+                    <br>
+
+                    <li>
+                       Tree-based models: Using the inbuilt ‘feature_importance’ function, we can understand the contribution of each feature to the final prediction
+
+                    </li>
+                    <br>
+
+                    <li>
+                       SHAP analysis: A game-theory based, model-agonistic tool to provide a overview on the contributions of the features to the final prediction
+                    </li>
+                </ul>
+
 
         
         <section id="references">
