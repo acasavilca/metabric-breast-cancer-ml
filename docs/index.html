@@ -213,12 +213,15 @@
                     <br>
 
                     <li>
-                        Outlier Treatment:
+                        Outlier Treatment: Models that heavily rely on distance metrics or linear assumptions are more sensitive to outliers than other models. It is thus advised to perform outlier treatment prior the learning process. 
+                        To reduce the ill-effects of such noisy points on the model, the pipeline designed detects outliers through inter-quartile range (IQR) method. For a given numeric feature, if a value here falls outside the range (Q1-1.5*IQR , Q3+1.5*IQR), it is treated as an outlier.
+                        If a value is below the lower limit, then it's value is augmented to lower limit and if the value is greater than the upper limit, then it is mapped to the upper limit. Such a method is referred as IQR clipping.
                     </li>
                     <br>
 
                     <li>
-                        Scaling:
+                        Scaling: The clinical dataset shows feature with varying magnitudes. If unscaled, features showing higher magnitudes [eg., age] can influence the model's learning over features of lower magnitudes (eg., tumor size). To overcome this unfairness, scaling of features provides an levelled ground where all features contribute to the model's learning process. In addition, the numerical stability of the model is improved.
+                        In the pipeline developed, standard scaler is employed, and it maps the current range to a new range where the mean of the data is 0 and standard deviation is 1.
                     </li>
                     <br>
 
@@ -241,6 +244,7 @@
             <strong>Feature Selection using Mutual Information</strong>
                 <p>
                     The cleaned clinical data and genes data are combined, giving us a huge number of features. Out of nearly 600 features, top 50 features were selected using the mutual information feature selector.
+                    Those features include a higher population of gene-data and few clinical columns/features. The 50 features include: '3-gene_classifier_subtype_ER+/HER2- High Prolif', '3-gene_classifier_subtype_ER-/HER2-', 'acvrl1', 'adgra2', 'ahnak', 'aph1b', 'ar', 'aurka', 'bcl2', 'bmpr1b', 'ccnb1', 'ccnd2', 'ccne1', 'cdc25a', 'cdk1', 'cdk6', 'chek1', 'cyb5a', 'e2f2', 'e2f3', 'e2f4', 'e2f7', 'egfr', 'er_status_Negative', 'er_status_Positive', 'er_status_measured_by_ihc_Negative', 'er_status_measured_by_ihc_Positve', 'erbb2', 'erbb3', 'fancd2', 'gata3', 'hsd17b4', 'igf1r', 'integrative_cluster_10', 'kit', 'lama2', 'lfng', 'mapt', 'mmp12', 'mmp7', 'notch1', 'npnt', 'nras', 'nrip1', 'plagl1', 'pr_status_Positive', 'srd5a1', 'tgfb3', 'tgfbr2', 'ttyh1'
                 </p>
 
         </section>
@@ -362,7 +366,7 @@
                 </tr>
                 <tr>
                     <td>FNU Naga Nishkala</td>
-                    <td>Methods, expected results</td>
+                    <td>Exploratory data analysis, data pre-processing pipeline</td>
                 </tr>
                 <tr>
                     <td>Luis Andrés Casavilca</td>
