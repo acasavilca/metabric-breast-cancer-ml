@@ -113,7 +113,7 @@
                     
 
                     <p>
-                        <u>Boxplots:</u> 
+                        <u>Boxplots:</u> Boxplots provide a compact visual to assess the distribution differences between classes. In addition, it provides a visual assessment on the number of outliers and skewness of the feature. Below are the boxplots for the selected four clinical features, 'Age at Diagnosis', 'Mutation count', 'Overall survival months', and 'Tumour size'
                     </p>
 
                     <div style="display: flex; gap: 150px; margin-bottom: 30px;">
@@ -127,7 +127,7 @@
                     </div>
 
                     <p>
-                        <u>Pair Plots:</u> 
+                        <u>Pair Plots:</u> Pairplots can help in observing distributions of the feature and also provide spread of values based on the target classes when points are class-colored. It also provides a visual on the nature of the correlation between two features and this serves as a very important first step towards correlation handling.
                     </p>
                     <img src="figures/pairplot.png" height="75%" width="75%">
 
@@ -136,17 +136,22 @@
                 <strong> Genes Data </strong>
 
                     <p>
-                        <u>Principal Components Analysis (PCA): </u>
+                        <u>Principal Components Analysis (PCA): </u> As the gene-data encompasses 400+ features, the genes data is linearly reduced to 2D dimensions and colored based on the classes. This visualization helps in understanding the underlying nature of the dataset.
                     </p>
                     <img src="figures/pca-genes.png" height="33%" width="33%">
 
                     <p>
-                        <u> Uniform Manifold Approximation and Projection (UMAP): </u>
+                        <u> Uniform Manifold Approximation and Projection (UMAP): </u> Non-linear reduction of 400+ genes features to 2 components.
                     </p>
                     <img src="figures/umap-genes.png" height="33%" width="33%">
 
                     <p>
-                        <u> Clustering:</u> This optional step was taken to assess the quality of genes data in addition to the above visual steps. Our motive here was to see how easy it is to separate the 7 classes we have with purely genes data. In general, the number of genes present in such experiments are generally in the order of 10000. K-means, GMM, and any other distance metric based clustering algorithms may fail to perform well. In such cases, other approaches for clustering methods such as  Leiden and Louvain clustering (graph based approaches) are highly recommended. For simplicity, we tried K-means clustering on the 489 genes features present. Metrics such as adjusted rand index (ARI), normalized mutual information (NMI), homogeneity and completeness scores, and Fowlkes-Mallows index were computed to understand the quality of the clustering.
+                        <u> Clustering:</u> This optional step was taken to assess the quality of genes data in addition to the above visual steps. 
+                        Our motive here was to see how easy it is to separate the 7 classes we have with purely genes data in an unsupervised fashion. In this way, we can understand if there is an underlying pattern for any of the classes. If an unsupervised approach yields clusters similar to the ground truth, then a supervised model should be able to achieve a good performance as well.
+                        If few clusters actually capture the ground-truth cluster/class, then a supervised model should perform well in classifying patients of this class inherently well than other classes.
+                        In general, the number of genes present in such experiments are generally in the order of 10000. K-means, GMM, and any other distance metric based clustering algorithms may fail to perform well. 
+                        In such cases, other approaches for clustering methods such as  Leiden and Louvain clustering (graph based approaches) are highly recommended. 
+                        For simplicity, we tried K-means clustering on the 489 genes features present. Metrics such as adjusted rand index (ARI), normalized mutual information (NMI), homogeneity and completeness scores, and Fowlkes-Mallows index were computed to understand the quality of the clustering.
                     </p>
                     <div style="display: flex; gap: 150px; margin-bottom: 30px;">
                         <img src="figures/umap-kmeans.png" height="33%" width="33%">
