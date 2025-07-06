@@ -86,14 +86,26 @@
                         <u>Histograms:</u> We plot stacked histograms for each column in the clinical areas subset to visually assess if these variables differ by breast cancer subtype. In doing this, we hoped to achieve the following two goals: (a) find clinical variables that differ between subtypes by visually spotting shifts in distributions between classes and (b) guide feature selection e.g., if distributions for all subtypes look identical, that feature may have low predictive power. In the interest of space, we only present results for the most relevant histograms.
                     </p>
 
-                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                        <img src="figures/histogram-age-at-diagnosis.png" height="33%" width="33%">
-                        <img src="figures/histogram-mutation-count.png" height="33%" width="33%">
+                    <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                        <figure style="text-align: center; width: 33%;">
+                            <img src="figures/histogram-age-at-diagnosis.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 1: Histogram for Age at Diagnosis</figcaption>
+                        </figure>
+                        <figure style="text-align: center; width: 33%;">
+                            <img src="figures/histogram-mutation-count.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 2: Histogram for Mutation Count</figcaption>
+                        </figure>
                     </div>
 
-                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                        <img src="figures/histogram-overall-survival-months.png" height="33%" width="33%">
-                        <img src="figures/histogram-tumour-size.png" height="33%" width="33%">
+                    <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                        <figure style="text-align: center; width: 33%;">
+                            <img src="figures/histogram-overall-survival-months.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 3: Histogram for Overall Survival Months</figcaption>
+                        </figure>
+                        <figure style="text-align: center; width: 33%;">
+                            <img src="figures/histogram-tumour-size.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 4: Histogram for Tumour Size</figcaption>
+                        </figure>
                     </div>
 
                     <ul>
@@ -116,20 +128,38 @@
                         <u>Boxplots:</u> Boxplots provide a compact visual to assess the distribution differences between classes. In addition, it provides a visual assessment on the number of outliers and skewness of the feature. Below are the boxplots for the selected four clinical features, 'Age at Diagnosis', 'Mutation count', 'Overall survival months', and 'Tumour size'
                     </p>
 
-                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                        <img src="figures/boxplot-age-at-diagnosis.png" height="33%" width="33%">
-                        <img src="figures/boxplot-mutation-count.png" height="33%" width="33%">
+                    <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                        <figure style="text-align: center; width: 33%;">
+                            <img src="figures/boxplot-age-at-diagnosis.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 5: Boxplot for Age at Diagnosis</figcaption>
+                        </figure>
+
+                        <figure style="text-align: center; width: 33%;">
+                            <img src="figures/boxplot-mutation-count.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 6: Boxplot for Mutation Count</figcaption>
+                        </figure>
                     </div>
 
-                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                        <img src="figures/boxplot-overall-survival-months.png" height="33%" width="33%">
-                        <img src="figures/boxplot-tumour-size.png" height="33%" width="33%">
+                    <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                        <figure style="text-align: center; width: 33%;">
+                            <img src="figures/boxplot-overall-survival-months.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 7: Boxplot for Overall Survival Months</figcaption>
+                        </figure>
+
+                        <figure style="text-align: center; width: 33%;">
+                            <img src="figures/boxplot-tumour-size.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 8: Boxplot for Tumour Size</figcaption>
+                        </figure>
                     </div>
 
                     <p>
                         <u>Pair Plots:</u> Pairplots can help in observing distributions of the feature and also provide spread of values based on the target classes when points are class-colored. It also provides a visual on the nature of the correlation between two features and this serves as a very important first step towards correlation handling.
                     </p>
-                    <img src="figures/pairplot.png" height="75%" width="75%">
+
+                    <figure style="text-align: center; width: 75%; height: 75%;">
+                        <img src="figures/pairplot.png" style="width: 100%; height: auto;">
+                        <figcaption>Figure 9: Pairplots</figcaption>
+                    </figure>
 
                     <br> <br>
                 
@@ -138,12 +168,18 @@
                     <p>
                         <u>Principal Components Analysis (PCA): </u> As the gene-data encompasses 400+ features, the genes data is linearly reduced to 2D dimensions and colored based on the classes. This visualization helps in understanding the underlying nature of the dataset.
                     </p>
-                    <img src="figures/pca-genes.png" height="33%" width="33%">
+                    <figure style="text-align: center; width: 33%; height: 33%;">
+                        <img src="figures/pca-genes.png" style="width: 100%; height: auto;">
+                        <figcaption>Figure 10: Prinicpal Components Analysis for Genes Data</figcaption>
+                    </figure>
 
                     <p>
                         <u> Uniform Manifold Approximation and Projection (UMAP): </u> Non-linear reduction of 400+ genes features to 2 components.
                     </p>
-                    <img src="figures/umap-genes.png" height="33%" width="33%">
+                    <figure style="text-align: center; width: 33%; height: 33%;">
+                        <img src="figures/umap-genes.png" style="width: 100%; height: auto;">
+                        <figcaption>Figure 11: Uniform Manifold Approximation and Projection for Genes Data</figcaption>
+                    </figure>
 
                     <p>
                         <u> Clustering:</u> This optional step was taken to assess the quality of genes data in addition to the above visual steps. 
@@ -153,12 +189,23 @@
                         In such cases, other approaches for clustering methods such as  Leiden and Louvain clustering (graph based approaches) are highly recommended. 
                         For simplicity, we tried K-means clustering on the 489 genes features present. Metrics such as adjusted rand index (ARI), normalized mutual information (NMI), homogeneity and completeness scores, and Fowlkes-Mallows index were computed to understand the quality of the clustering.
                     </p>
-                    <div style="display: flex; gap: 150px; margin-bottom: 30px;">
-                        <img src="figures/umap-kmeans.png" height="33%" width="33%">
-                        <img src="figures/umap-gmm.png" height="33%" width="33%">
+                    <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+
+                        <figure style="text-align: center; width: 33%; height: 33%;">
+                            <img src="figures/umap-kmeans.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 12: KMeans Clustering</figcaption>
+                        </figure>
+
+                        <figure style="text-align: center; width: 33%; height: 33%;">
+                            <img src="figures/umap-gmm.png" style="width: 100%; height: auto;">
+                            <figcaption>Figure 13: GMM Clustering</figcaption>
+                        </figure>
                     </div>
 
-                    <table border="1" cellpadding="5" cellspacing="0">
+                    <table border="1" cellpadding="5" cellspacing="0" style="margin-left: 30%">
+                        <caption style="caption-side: top; font-weight: bold; margin-bottom: 10px;">
+                            Table 1: Evaluation Metrics for KMeans and GMM Clustering
+                        </caption>
                         <thead>
                             <tr>
                             <th>Metric</th>
@@ -339,6 +386,96 @@
                        SHAP analysis: A game-theory based, model-agonistic tool to provide a overview on the contributions of the features to the final prediction
                     </li>
                 </ul>
+        
+        <section id="discussion">
+            <h2> Discussion</h2>
+
+                <h3> Exploratory Data Analysis</h3>
+
+                <ol>
+                    <li>
+                       <u> UMAP vs PCA Visualization</u> 
+                       <ul>
+                            <li> UMAP showed much better separation of classes than PCA.</li>
+                       </ul>
+                    </li>
+                    <br>
+                    <div style="margin-left: 40px;">
+                        <strong> Interpretation: </strong>
+
+                            <ul>
+                                <li>The data is non-linearly separable in its raw high-dimensional space</li>
+                                <li>Linear techniques like PCA fail to capture the complex structure</li>
+                            </ul>
+                        <br>
+                    </div>
+
+                    <li>
+                       <u> Clustering Before Supervised Learning</u>
+                       <ul>
+                            <li> Applied unsupervised clustering to explore inherent separability.</li>
+                            <li> Compared clusters (generated without label knowledge) to true class labels.</li>
+                            <li> Class 'Basal' cluster in K-means clustering is close to ground truth when we see the UMAP colored with k-means clusters vs groud truth </li>
+                       </ul>
+                    </li>
+                    <br>
+
+                    <div style="margin-left: 40px;">
+                        <strong> Interpretation: </strong>
+
+                            <ul>
+                                <li>There is an underlying, intrinsic pattern in the data for at least class 'Basal'</li>
+                                <li>Since class 'Basal' aligned naturally with data structure, it means class Basal datapoints emerge even without supervision.</li>
+                                <li>For this class, a supervised model should perform well, as separability exists inherently.</li>
+                            </ul>
+                        <br>
+                    </div>
+
+                    <li>
+                       <u> K-Means vs GMM Performance </u>
+                       <ul>
+                            <li> K-Means performed better than GMM in clustering alignment with ground truth.</li>
+                            <li> GMM, which allows flexible, elliptical clusters, did not outperform the simpler, distance-based K-Means.</li>
+                       </ul>
+                    </li>
+                    <br>
+                    <div style="margin-left: 40px;">
+                        <strong> Interpretation: </strong>
+
+                            <ul>
+                                <li>Cluster structure is compact, symmetric, and distance-driven rather than elongated or highly irregular</li>
+                                <li>Euclidean distance reflects meaningful class similarity, which means supervised models that use euclidean distance should do well.</li>
+                            </ul>
+                    </div>
+                </ol>
+
+                <div id = "gene-data-understanding" style="margin-left: 40px;">
+                    <h4> Overall Understanding of the genes-data </h4>
+
+                        <ol>
+                            <li>Non-linear structure is present, detected via UMAP's superior visualization.</li>
+                            <li>Partial intrinsic class separation (class 'Basal') is evident from unsupervised clustering aligning with some ground truth labels.</li>
+                            <li>Distance-based relationships dominate, supported by K-Means outperforming GMM.</li>
+                            <li>There is potential for supervised learning success, especially for clearly separable classes.</li>
+                            <li>Classes with poor separation in clustering may require more sophisticated, possibly non-linear models for effective classification.</li>
+                        </ol>
+                </div>
+
+                <div id = "strategic-takeaways" style="margin-left: 40px;">
+                
+                    <h4> Strategic Takeaways </h4>
+
+                        <ol>
+                            <li>Explore non-linear supervised models (e.g., kernel SVM, tree-based ensembles, neural networks).</li>
+                            <li>Distance-based approaches like k-NN may work well given the structure.</li>
+                            <li>Focus on classes with poor unsupervised separation for targeted feature engineering or model optimization.</li>
+                        </ol>
+                </div>
+
+                
+
+                <h3> Models </h3>
+        </section>
 
 
         
