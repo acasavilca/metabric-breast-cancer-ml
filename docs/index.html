@@ -17,6 +17,54 @@
         p {
             text-align: justify;
         }
+
+        .pca-umap-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+            justify-content: center;
+            align-items: flex-start;
+            /* font-family: Arial, sans-serif; */
+        }
+
+        .pca-block {
+            width: 45%;
+            min-width: 300px;
+        }
+
+        .umap-block {
+            width: 45%;
+            min-width: 300px;
+        }
+
+        .pca-block p {
+            font-size: 14px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .umap-block p {
+            font-size: 14px;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+
+        .pca-block figure {
+            text-align: center;
+            margin: 0;
+        }
+
+        .umap-block figure {
+            text-align: center;
+            margin: 0;
+        }
+
+        /* .viz-block figcaption {
+            font-size: 13px;
+            margin-top: 5px;
+            color: #555;
+        } */
         .logistic-regression-metrics-container {
             display: flex;
             /* gap: 10px; */
@@ -263,21 +311,27 @@
                 
                 <strong> Genes Data </strong>
 
-                    <p>
-                        <u>Principal Components Analysis (PCA): </u> As the gene-data encompasses 400+ features, the genes data is linearly reduced to 2D dimensions and colored based on the classes. This visualization helps in understanding the underlying nature of the dataset.
-                    </p>
-                    <figure style="text-align: center; width: 33%; height: 33%;">
-                        <img src="figures/pca-genes.png" style="width: 100%; height: auto;">
-                        <figcaption>Figure 10: Prinicpal Components Analysis for Genes Data</figcaption>
-                    </figure>
+                    <div class="pca-umap-block">
+                        <div class="pca-block">
+                            <p>
+                            <u>Principal Components Analysis (PCA):</u> As the gene-data encompasses 400+ features, the genes data is linearly reduced to 2D dimensions and colored based on the classes. This visualization helps in understanding the underlying nature of the dataset.
+                            </p>
+                            <figure>
+                            <img src="figures/pca-genes.png" alt="PCA for genes" style="width: 80%; height: auto;">
+                            <figcaption>Figure 10: Principal Components Analysis for Genes Data</figcaption>
+                            </figure>
+                        </div>
 
-                    <p>
-                        <u> Uniform Manifold Approximation and Projection (UMAP): </u> Non-linear reduction of 400+ genes features to 2 components.
-                    </p>
-                    <figure style="text-align: center; width: 33%; height: 33%;">
-                        <img src="figures/umap-genes.png" style="width: 100%; height: auto;">
-                        <figcaption>Figure 11: Uniform Manifold Approximation and Projection for Genes Data</figcaption>
-                    </figure>
+                        <div class="umap-block">
+                            <p>
+                            <u>Uniform Manifold Approximation and Projection (UMAP):</u> Non-linear reduction of 400+ genes features to 2 components.
+                            </p>
+                            <figure>
+                            <img src="figures/umap-genes.png" alt="UMAP for genes" style="width: 80%; height: auto;">
+                            <figcaption>Figure 11: Uniform Manifold Approximation and Projection for Genes Data</figcaption>
+                            </figure>
+                        </div>
+                    </div>
 
                     <p>
                         <u> Clustering:</u> This optional step was taken to assess the quality of genes data in addition to the above visual steps. 
