@@ -17,6 +17,104 @@
         p {
             text-align: justify;
         }
+        .logistic-regression-metrics-container {
+            display: flex;
+            /* gap: 10px; */
+            margin-bottom: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .logistic-regression-metrics-container figure,
+        .logistic-regression-metrics-container .table-wrapper {
+            width: 33%;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .logistic-regression-metrics-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        table.logistic-regression-classification-report {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        table.logistic-regression-classification-report th,
+        table.logistic-regression-classification-report td {
+            border: 1px solid #ccc;
+            padding: 6px 8px;
+            text-align: center;
+        }
+
+        table.logistic-regression-classification-report th {
+            background-color: #03376e;
+            color:white;
+        }
+
+        table.logistic-regression-classification-report caption {
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .highlight {
+            background-color: #f0f7ff;
+            font-weight: bold;
+            color:black
+        }
+
+        .gene-table {
+            width: 80%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin: 20px 0;
+        }
+
+        .gene-table caption {
+            caption-side: top;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .gene-table th {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            text-align: center;
+            background-color: #203f61;
+            color: white;
+        }
+
+        .gene-table td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            text-align: justify;
+        }
+
+        /* .gene-table thead {
+            background-color: #e6f2ff;
+        } */
+
+        .gene-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .gene-table tbody tr:hover {
+            background-color: #f1faff;
+        }
+
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -475,6 +573,157 @@
                 
 
                 <h3> Models </h3>
+
+                    <ol>
+                        <li>
+                            <strong> Logistic Regression </strong> 
+                                
+                                <ul>
+                                    <br>
+                                    <li>
+                                        <u>Obtained metrics</u>: The model displays satisfactory results, with an overall testing AUROC of 0.949 and overall testing accuracy of 76%. The model shows high F1 scores per class (except class 'normal'), macro aggregated F1 score  and weighted F1 score, thus showing good discriminatory power. The class 'normal' shows the lowest F1 score. Upon studying the confusion matrix, the model seems to misclassify 'normal' cases as 'LumA', 'Claudin-low' or 'Her2'. Additionally, the model misclassifies 'LumA' instances as either 'normal' or 'LumB'. 
+                                    </li>
+                            
+                                    <div class="logistic-regression-metrics-container">
+                                        <figure>
+                                            <img src="figures/logistic-regression-roc-curves.jpeg" alt="ROC curves">
+                                            <!-- <figcaption>Figure 14: Logistic Regression ROC Curves</figcaption> -->
+                                        </figure>
+
+                                        <figure>
+                                            <img src="figures/logistic-regression-confusion-matrix.png" alt="Confusion matrix">
+                                            <!-- <figcaption>Figure 15: Logistic Regression Confusion Matrix</figcaption> -->
+                                        </figure>
+
+                                        <div class="table-wrapper">
+                                            <table class="logistic-regression-classification-report">
+                                            <caption>Classification Report (Weighted AUROC: 0.9475)</caption>
+                                            <thead>
+                                                <tr>
+                                                <th>Class</th>
+                                                <th>Precision</th>
+                                                <th>Recall</th>
+                                                <th>F1-Score</th>
+                                                <th>Support</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Basal</td><td>0.85</td><td>0.78</td><td>0.82</td><td>37</td></tr>
+                                                <tr><td>Her2</td><td>0.67</td><td>0.78</td><td>0.72</td><td>51</td></tr>
+                                                <tr><td>LumA</td><td>0.85</td><td>0.73</td><td>0.78</td><td>127</td></tr>
+                                                <tr><td>LumB</td><td>0.73</td><td>0.80</td><td>0.77</td><td>92</td></tr>
+                                                <tr><td>Normal</td><td>0.56</td><td>0.61</td><td>0.58</td><td>31</td></tr>
+                                                <tr><td>Claudin-low</td><td>0.82</td><td>0.79</td><td>0.81</td><td>39</td></tr>
+                                                <tr class="highlight"><td>Accuracy</td><td colspan="3">0.76</td><td>377</td></tr>
+                                                <tr class="highlight"><td>Macro Avg</td><td>0.75</td><td>0.75</td><td>0.75</td><td>377</td></tr>
+                                                <tr class="highlight"><td>Weighted Avg</td><td>0.77</td><td>0.76</td><td>0.76</td><td>377</td></tr>
+                                            </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <li>
+                                        <u>Model Explainability</u>:
+                                        
+                                        <ul> 
+                                            <br>
+                                            <li>
+                                                Coefficients/Feature importance for all classes: The plots below show the top 10 contributing features based on the absolute value of the coefficients. Using the coefficients plots obtained here, we will inspect the top 6 features and study if they agree with the clinical literature. In our study, we will dive deeper into model interpretation for only class 'Basal'. Basal-like subtype is the most aggressive and has the poorest prognosis among the breast cancer subtypes listed, with a 58% 5-year overall survival and frequent relapses 
+                                            </li>
+                                            <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
+                                                <figure style="text-align: center; width: 75%; height: 75%;">
+                                                    <img src="figures/logistic-regression-most-informative-genes.png" style="width: 100%; height: auto;">
+                                                    <figcaption>Figure 15: Logistic Regression Top 10 Most Informative Genes Per Class</figcaption>
+                                                </figure>
+                                            </div>
+
+                                            <li>
+                                                Detailed study for class 'Basal' with plots and discussion/interpretation: Here, we examine the coefficients' signs and the nature of the features and see if they agree with clinical literature. To be specific, if the top feature is a gene, we observe if the coefficient sign for the gene is positive or not if the gene should be upregulated for class 'Basal' and coefficient sign is negative if the gene should be downregulated for class 'Basal'. If the top feature is a clinical feature, then we study clinical feature's nature (whether it's directly proportional to the aggressiveness of the cancer or inversely proportional). 
+                                            </li>
+                                            <br>
+
+                                            <table class="gene-table">
+                                                <caption>Gene-Level Insights with Clinical Relevance</caption>
+                                                <thead>
+                                                    <tr>
+                                                    <th>Gene</th>
+                                                    <th>Coefficient Sign</th>
+                                                    <th>Role / Other Relevant Info</th>
+                                                    <th>Matches Clinical Data?</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                    <td>nrip1</td>
+                                                    <td>Negative</td>
+                                                    <td>
+                                                        High expression in Lum subtypes, supporting cell proliferation. Although not among the top ten genes in LumA/B in our model, they have the largest positive coefficients in these subtypes compared to the other subtypes [6].
+                                                    </td>
+                                                    <td>Yes. Known to be lowly expressed in basal-like subtype [6].</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>kit</td>
+                                                    <td>Positive</td>
+                                                    <td>
+                                                        Tyrosine kinase growth factor, co-expressed with EGFR in basal-like subtypes [7].
+                                                    </td>
+                                                    <td>Yes. Overexpressed in basal-like subtype [7].</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>tgfbr2</td>
+                                                    <td>Negative</td>
+                                                    <td>
+                                                        Tumor suppressor in normal tissue [8].<br>
+                                                        Small, almost zero coefficient in “Normal” class in our model.
+                                                    </td>
+                                                    <td>
+                                                        Yes. Low expression in basal-like tissue compared to normal tissue, but it’s also lowly expressed in other subtypes [8].
+                                                    </td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>nptnt</td>
+                                                    <td>Negative</td>
+                                                    <td>
+                                                        Extracellular matrix protein involved in bone formation whose downregulation reduces metastatic spread to the bone [9].
+                                                    </td>
+                                                    <td>No clinical data supporting differential expression in the basal-like subtype.</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>chek1</td>
+                                                    <td>Positive</td>
+                                                    <td>
+                                                        Promotes epithelial to mesenchymal transition (EMT) and enhances migration and invasion ability.<br>
+                                                        Correlated with poor survival [10].
+                                                    </td>
+                                                    <td>Yes. Known to be upregulated and a marker for basal-like subtypes [10].</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>egfr</td>
+                                                    <td>Positive</td>
+                                                    <td>
+                                                        Tyrosine kinase growth factor.<br>
+                                                        Correlated with poor survival rate and frequent relapses.<br>
+                                                        Overactivation results in aberrant signaling and uncontrolled cell growth and proliferation [11,12].
+                                                    </td>
+                                                    <td>Yes. Known to be overexpressed [11,12].</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                                                <figure style="text-align: center; width: 75%; height: 75%;">
+                                                    <img src="figures/logistic-regression-boxplots.jpeg" style="width: 100%; height: auto;">
+                                                    <figcaption>Figure 16: Logistic Regression Boxplots for Top 6 Genes</figcaption>
+                                                </figure>
+                                            </div>
+
+                                            The coefficient signs for the top 6 features (here, all 6 features are genes) and the nature of those genes (upregulated or downregulated) were consistent, showing that the model captures meaningful patterns and provides the predicted probability. The top six genes with the largest coefficients are consistent with clinical data, i.e., genes with large positive coefficients are known to be upregulated, while those with large negative coefficients are known to be downregulated. The exception was NPNT, whose large negative coefficient is not backed by clinical data, which does not describe any differential expression of this gene in basal-like subtype.
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                        </li>
+                    </ol>
         </section>
 
 
@@ -482,13 +731,53 @@
         <section id="references">
             <h2>References</h2>
             <ol>
-                <li>van 't Veer, L. J., Dai, H., Van De Vijver, M. J., He, Y. D., Hart, A. A. M., Mao, M., Peterse, H. L., Van Der Kooy, K., Marton, M. J., Witteveen, A. T., Schreiber, G. J., Kerkhoven, R. M., Roberts, C., Linsley, P. S., Bernards, R., & Friend, S. H. (2002).Gene expression profiling predicts clinical outcome of breast cancer. Nature, 415(6871), 530–536. 
-                    <a href="https://doi.org/10.1038/415530a" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/415530a</a></li>
-                <li>Curtis, C., Shah, S. P., Chin, S.-F., Turashvili, G., Rueda, O. M., Dunning, M. J., Speed, D., Lynch, A. G., Samarajiwa, S., Yuan, Y., Gräf, S., Ha, G., Haffari, G., Bashashati, A., Russell, R., McKinney, S., Langerød, A., Green, A., Provenzano, E., Wishart, G., Pinder, S., Watson, P., Markowetz, F., Murphy, L., Ellis, I., Purushotham, A., Børresen-Dale, A.-S., Brenton, J. D., Tavaré, S., Caldas, C., & Aparicio, S. (2012). The genomic and transcriptomic architecture of 2,000 breast tumours reveals novel subgroups. Nature, 486(7403), 346–352. 
-                    <a href="https://doi.org/10.1038/nature10983" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/nature10983</a></li>
-                <li>Clarke, C., Madden, S. F., Doolan, P., Aherne, S. T., Joyce, H., O’Driscoll, L., Gallagher, W. M., Hennessy, B. T., Moriarty, M., Crown, J., Kennedy, S., & Clynes, M. (2013). Correlating transcriptional networks to breast cancer survival: A large-scale coexpression analysis. Carcinogenesis, 34(10), 2300–2308. 
-                    <a href="https://doi.org/10.1093/carcin/bgt208" target="_blank" rel="noopener noreferrer">https://doi.org/10.1093/carcin/bgt208</a></li>
-                <li><a href="https://www.kaggle.com/datasets/raghadalharbi/breast-cancer-gene-expression-profiles-metabric/data" target="_blank" rel="noopener noreferrer">METABRIC Dataset</a></li>
+                <li>
+                    van 't Veer, L. J., Dai, H., Van De Vijver, M. J., He, Y. D., Hart, A. A. M., Mao, M., Peterse, H. L., Van Der Kooy, K., Marton, M. J., Witteveen, A. T., Schreiber, G. J., Kerkhoven, R. M., Roberts, C., Linsley, P. S., Bernards, R., & Friend, S. H. (2002).Gene expression profiling predicts clinical outcome of breast cancer. Nature, 415(6871), 530–536. 
+                    <a href="https://doi.org/10.1038/415530a" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/415530a</a>
+                </li>
+                <li>
+                    Curtis, C., Shah, S. P., Chin, S.-F., Turashvili, G., Rueda, O. M., Dunning, M. J., Speed, D., Lynch, A. G., Samarajiwa, S., Yuan, Y., Gräf, S., Ha, G., Haffari, G., Bashashati, A., Russell, R., McKinney, S., Langerød, A., Green, A., Provenzano, E., Wishart, G., Pinder, S., Watson, P., Markowetz, F., Murphy, L., Ellis, I., Purushotham, A., Børresen-Dale, A.-S., Brenton, J. D., Tavaré, S., Caldas, C., & Aparicio, S. (2012). The genomic and transcriptomic architecture of 2,000 breast tumours reveals novel subgroups. Nature, 486(7403), 346–352. 
+                    <a href="https://doi.org/10.1038/nature10983" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/nature10983</a>
+                </li>
+                <li>
+                    Clarke, C., Madden, S. F., Doolan, P., Aherne, S. T., Joyce, H., O’Driscoll, L., Gallagher, W. M., Hennessy, B. T., Moriarty, M., Crown, J., Kennedy, S., & Clynes, M. (2013). Correlating transcriptional networks to breast cancer survival: A large-scale coexpression analysis. Carcinogenesis, 34(10), 2300–2308. 
+                    <a href="https://doi.org/10.1093/carcin/bgt208" target="_blank" rel="noopener noreferrer">https://doi.org/10.1093/carcin/bgt208</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/datasets/raghadalharbi/breast-cancer-gene-expression-profiles-metabric/data" target="_blank" rel="noopener noreferrer">METABRIC Dataset</a>
+                </li>
+
+                <li>
+                    Bertucci, F., Finetti, P. & Birnbaum, D. Basal Breast Cancer: A Complex and Deadly Molecular Subtype. Curr. Mol. Med. 12, 96-110 (2012).
+                </li>
+
+                <li>
+                    Aziz, M. H. et al. Suppressing NRIP1 inhibits growth of breast cancer cells in vitro and in vivo. Oncotarget 6, 39714-39724 (2015).
+                </li>
+                    
+                <li>
+                    Nalwoga, H., Arnes, J. B., Wabinga, H. & Akslen, L. A. Expression of EGFR and c-kit is associated with the basal-like phenotype in breast carcinomas of African women. APMIS Acta Pathol. Microbiol. Immunol. Scand. 116, 515-525 (2008).
+                </li>
+                    
+                <li>
+                    Chen, C. et al. TGFβ isoforms and receptors mRNA expression in breast tumours: prognostic value and clinical implications. BMC Cancer 15, 1010 (2015).
+                </li>
+                    
+                <li>
+                    Wang, D. et al. NPNT promotes early-stage bone metastases in breast cancer by regulation of the osteogenic niche. J. Bone Oncol. 13, 91-96 (2018).
+                </li>
+                    
+                <li>
+                    Kim, H.-J., Seo, B.-G., Seo, E.-C., Lee, K.-M. & Hwangbo, C. Checkpoint Kinase 1 (CHK1) Functions as Both a Diagnostic Marker and a Regulator of Epithelial-to-Mesenchymal Transition (EMT) in Triple-Negative Breast Cancer. Curr. Issues Mol. Biol. 44, 5848-5865 (2022).
+                </li>
+                    
+                <li>
+                    Park, H. S. et al. High EGFR gene copy number predicts poor outcome in triple-negative breast cancer. Mod. Pathol. 27, 1212-1222 (2014).
+                </li>
+
+                <li>
+                    Leidy, J., Khan, A. & Kandil, D. Basal-Like Breast Cancer: Update on Clinicopathologic, Immunohistochemical, and Molecular Features. Arch. Pathol. Lab. Med. 138, 37-43 (2014).
+                </li>
             </ol>
             </section>
         <section id="contributions table">
@@ -496,27 +785,27 @@
             <table>
                 <tr>
                     <th>Name</th>
-                    <th>Proposal Contribution</th>
+                    <th>Contribution</th>
                 </tr>
                 <tr>
                     <td>Abhishek Vijeev</td>
-                    <td>Dataset discovery, introduction</td>
+                    <td>EDA, data pre-processing, website</td>
                 </tr>
                 <tr>
                     <td>Celine M Al-Noubani</td>
-                    <td>Dataset discovery, video presentation</td>
+                    <td>EDA, data pre-processing</td>
                 </tr>
                 <tr>
                     <td>FNU Naga Nishkala</td>
-                    <td>Exploratory data analysis, data pre-processing pipeline</td>
+                    <td>EDA, data pre-processing</td>
                 </tr>
                 <tr>
                     <td>Luis Andrés Casavilca</td>
-                    <td>GitHub</td>
+                    <td>Logistic Regression</td>
                 </tr>
                 <tr>
                     <td>Nikhil Sundaram</td>
-                    <td>Gantt chart</td>
+                    <td>Logistic Regression</td>
                 </tr>
                 </table>
             </section>
