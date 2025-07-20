@@ -1085,12 +1085,10 @@
                                     <div class="logistic-regression-metrics-container">
                                         <figure>
                                             <img src="figures/logistic-regression-roc-curves.jpeg" alt="ROC curves">
-                                            <!-- <figcaption>Figure 14: Logistic Regression ROC Curves</figcaption> -->
                                         </figure>
 
                                         <figure>
                                             <img src="figures/logistic-regression-confusion-matrix.png" alt="Confusion matrix">
-                                            <!-- <figcaption>Figure 15: Logistic Regression Confusion Matrix</figcaption> -->
                                         </figure>
 
                                         <div class="table-wrapper">
@@ -1131,7 +1129,7 @@
                                             <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
                                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                                     <img src="figures/logistic-regression-most-informative-features.png" style="width: 100%; height: auto;">
-                                                    <figcaption>Figure 15: Logistic Regression Top 10 Most Informative Features Per Class</figcaption>
+                                                    <figcaption>Figure 14: Logistic Regression Top 10 Most Informative Features Per Class</figcaption>
                                                 </figure>
                                             </div>
 
@@ -1211,7 +1209,7 @@
                                             <div style="display: flex; gap: 100px; margin-bottom: 30px;">
                                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                                     <img src="figures/logistic-regression-boxplots.jpeg" style="width: 100%; height: auto;">
-                                                    <figcaption>Figure 16: Logistic Regression Boxplots for Top 6 Genes</figcaption>
+                                                    <figcaption>Figure 15: Logistic Regression Boxplots for Top 6 Genes</figcaption>
                                                 </figure>
                                             </div>
 
@@ -1755,7 +1753,8 @@
                     Leidy, J., Khan, A. & Kandil, D. Basal-Like Breast Cancer: Update on Clinicopathologic, Immunohistochemical, and Molecular Features. Arch. Pathol. Lab. Med. 138, 37-43 (2014).
                 </li>
             </ol>
-            </section>
+        </section>
+
         <section id="contributions table">
             <h2>Contributions table</h2>
             <table>
@@ -1783,14 +1782,158 @@
                     <td>Nikhil Sundaram</td>
                     <td>Logistic Regression</td>
                 </tr>
-                </table>
-            </section>
+            </table>
+        </section>
+
         <p><a href="ML_Project_Gantt.xlsx" download  style="font-weight: bold;">Gantt chart</a></p>
+
+        <section id="appendix">
+            <h2>Appendix</h2>
+
+            <h3> Model Explainability </h3>
+                <ul>
+                    <li> 
+                        Decision Tree
+
+                        <ul> 
+                            <br>
+                            <li>
+                                Coefficients/Feature importance for all classes:
+                            </li>
+                            <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
+                                <figure style="text-align: center; width: 75%; height: 75%;">
+                                    <img src="figures/decision-tree-most-informative-features.png" style="width: 100%; height: auto;">
+                                    <figcaption>Figure 16: Decision Tree Top 10 Most Informative Features Per Class</figcaption>
+                                </figure>
+                            </div>
+
+                            <li>
+                                Detailed study for class 'Basal' with plots and discussion/interpretation:
+                            </li>
+                            <br>
+
+                            <table class="gene-table">
+                                <caption>Gene-Level Insights with Clinical Relevance</caption>
+                                <thead>
+                                    <tr>
+                                    <th>Gene</th>
+                                    <th>Coefficient Sign</th>
+                                    <th>Role / Other Relevant Info</th>
+                                    <th>Coefficients' signs Matches Clinical Literature?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+
+                            <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                                <figure style="text-align: center; width: 75%; height: 75%;">
+                                    <img src="figures/decision-tree-boxplots.jpeg" style="width: 100%; height: auto;">
+                                    <figcaption>Figure 17: Decision Tree Boxplots for Top 6 Genes</figcaption>
+                                </figure>
+                            </div>
+                        </ul>
+                    </li>
+                    
+                </ul>
+
+                <ul>
+                    <li> 
+                        Random Forest
+
+                        <ul> 
+                            <br>
+                            <li>
+                                Coefficients/Feature importance for all classes:
+                            </li>
+                            <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
+                                <figure style="text-align: center; width: 75%; height: 75%;">
+                                    <img src="figures/random-forest-most-informative-features.png" style="width: 100%; height: auto;">
+                                    <figcaption>Figure 18: Random Forest Top 10 Most Informative Features Per Class</figcaption>
+                                </figure>
+                            </div>
+
+                            <li>
+                                Detailed study for class 'Basal' with plots and discussion/interpretation:
+                            </li>
+                            <br>
+
+                            <table class="gene-table">
+                                <caption>Gene-Level Insights with Clinical Relevance</caption>
+                                <thead>
+                                    <tr>
+                                    <th>Gene</th>
+                                    <th>Coefficient Sign</th>
+                                    <th>Role / Other Relevant Info</th>
+                                    <th>Coefficients' signs Matches Clinical Literature?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+
+                            <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                                <figure style="text-align: center; width: 75%; height: 75%;">
+                                    <img src="figures/random-forest-boxplots.jpeg" style="width: 100%; height: auto;">
+                                    <figcaption>Figure 19: Random Forest Boxplots for Top 6 Genes</figcaption>
+                                </figure>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li> 
+                        Gradient Boosted Decision Tree
+                        <ul> 
+                            <br>
+                            <li>
+                                Coefficients/Feature importance for all classes:
+                            </li>
+                            <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
+                                <figure style="text-align: center; width: 75%; height: 75%;">
+                                    <img src="figures/gbdt-most-informative-features.png" style="width: 100%; height: auto;">
+                                    <figcaption>Figure 20: Gradient Boosted Decision Tree Top 10 Most Informative Features Per Class</figcaption>
+                                </figure>
+                            </div>
+
+                            <li>
+                                Detailed study for class 'Basal' with plots and discussion/interpretation:
+                            </li>
+                            <br>
+
+                            <table class="gene-table">
+                                <caption>Gene-Level Insights with Clinical Relevance</caption>
+                                <thead>
+                                    <tr>
+                                    <th>Gene</th>
+                                    <th>Coefficient Sign</th>
+                                    <th>Role / Other Relevant Info</th>
+                                    <th>Coefficients' signs Matches Clinical Literature?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+
+                            <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                                <figure style="text-align: center; width: 75%; height: 75%;">
+                                    <img src="figures/gbdt-boxplots.jpeg" style="width: 100%; height: auto;">
+                                    <figcaption>Figure 21: Gradient Boosted Decision Tree Boxplots for Top 6 Genes</figcaption>
+                                </figure>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+        </section>
     </main>
 
-    <footer>
+    <!-- <footer>
         <p>Created by CS7641-ML Group 3 on June 13, 2025</p>
-    </footer>
+    </footer> -->
 
 </body>
 </html>
