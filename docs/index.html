@@ -1695,6 +1695,51 @@
                                             </table>
                                         </div>
                                     </div>
+                                <li>
+                                    <u>Model Explainability</u>:
+                                    
+                                    <ul> 
+                                        <br>
+                                        <li>
+                                            Coefficients/Feature importance for all classes: 
+                                        </li>
+                                        <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
+                                            <figure style="text-align: center; width: 75%; height: 75%;">
+                                                <img src="figures/svm-most-informative-features.png" style="width: 100%; height: auto;">
+                                                <figcaption>Figure 16: SVM Top 10 Most Informative Features Per Class</figcaption>
+                                            </figure>
+                                        </div>
+
+                                        <li>
+                                            Detailed study for class 'Basal' with plots and discussion/interpretation: 
+                                        </li>
+                                        <br>
+
+                                        <table class="gene-table">
+                                            <caption>Gene-Level Insights with Clinical Relevance</caption>
+                                            <thead>
+                                                <tr>
+                                                <th>Gene</th>
+                                                <th>Coefficient Sign</th>
+                                                <th>Role / Other Relevant Info</th>
+                                                <th>Coefficients' signs Matches Clinical Literature?</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                            </tbody>
+                                        </table>
+
+                                        <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                                            <figure style="text-align: center; width: 75%; height: 75%;">
+                                                <img src="figures/svm-boxplots.jpeg" style="width: 100%; height: auto;">
+                                                <figcaption>Figure 17: SVM Boxplots for Top 6 Genes</figcaption>
+                                            </figure>
+                                        </div>
+
+                                        
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ol>
@@ -1803,7 +1848,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/decision-tree-most-informative-features.png" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 16: Decision Tree Top 10 Most Informative Features Per Class</figcaption>
+                                    <figcaption>Figure 18: Decision Tree Top 10 Most Informative Features Per Class</figcaption>
                                 </figure>
                             </div>
 
@@ -1830,7 +1875,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/decision-tree-boxplots.jpeg" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 17: Decision Tree Boxplots for Top 6 Genes</figcaption>
+                                    <figcaption>Figure 19: Decision Tree Boxplots for Top 6 Genes</figcaption>
                                 </figure>
                             </div>
                         </ul>
@@ -1850,7 +1895,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/random-forest-most-informative-features.png" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 18: Random Forest Top 10 Most Informative Features Per Class</figcaption>
+                                    <figcaption>Figure 20: Random Forest Top 10 Most Informative Features Per Class</figcaption>
                                 </figure>
                             </div>
 
@@ -1877,7 +1922,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/random-forest-boxplots.jpeg" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 19: Random Forest Boxplots for Top 6 Genes</figcaption>
+                                    <figcaption>Figure 21: Random Forest Boxplots for Top 6 Genes</figcaption>
                                 </figure>
                             </div>
                         </ul>
@@ -1895,7 +1940,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/gbdt-most-informative-features.png" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 20: Gradient Boosted Decision Tree Top 10 Most Informative Features Per Class</figcaption>
+                                    <figcaption>Figure 22: Gradient Boosted Decision Tree Top 10 Most Informative Features Per Class</figcaption>
                                 </figure>
                             </div>
 
@@ -1922,7 +1967,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/gbdt-boxplots.jpeg" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 21: Gradient Boosted Decision Tree Boxplots for Top 6 Genes</figcaption>
+                                    <figcaption>Figure 23: Gradient Boosted Decision Tree Boxplots for Top 6 Genes</figcaption>
                                 </figure>
                             </div>
                         </ul>
