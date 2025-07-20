@@ -62,7 +62,7 @@
 
         .logistic-regression-hyperparam-table {
             border-collapse: collapse;
-            width: 15%;
+            width: 17%;
             /* margin: 20px auto; */
             margin-top: 10px;
             margin-left: 2.5%;
@@ -95,6 +95,44 @@
         }
 
         .logistic-regression-hyperparam-table tr:hover {
+            background-color: #f1faff;
+        }
+
+        .decision-tree-hyperparam-table {
+            border-collapse: collapse;
+            width: 17%;
+            /* margin: 20px auto; */
+            margin-top: 10px;
+            margin-left: 2.5%;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .decision-tree-hyperparam-table caption {
+            caption-side: top;
+            text-align: center;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .decision-tree-hyperparam-table th,
+        .decision-tree-hyperparam-table td {
+            text-align: center;
+            /* padding: 10px 14px; */
+            border-bottom: 1px solid #ddd;
+            font-size: 0.75em;
+        }
+
+        .decision-tree-hyperparam-table th {
+            background-color: #203f61;
+            font-weight: bold;
+            font-size: 0.8em;
+            color:white;
+        }
+
+        .decision-tree-hyperparam-table tr:hover {
             background-color: #f1faff;
         }
 
@@ -141,6 +179,54 @@
         }
 
         table.logistic-regression-classification-report caption {
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .decision-tree-metrics-container {
+            display: flex;
+            /* gap: 10px; */
+            margin-bottom: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .decision-tree-metrics-container figure,
+        .decision-tree-metrics-container .table-wrapper {
+            width: 33%;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .decision-tree-metrics-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        table.decision-tree-classification-report {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        table.decision-tree-classification-report th,
+        table.decision-tree-classification-report td {
+            border: 1px solid #ccc;
+            padding: 6px 8px;
+            text-align: center;
+        }
+
+        table.decision-tree-classification-report th {
+            background-color: #03376e;
+            color:white;
+        }
+
+        table.decision-tree-classification-report caption {
             font-weight: bold;
             margin-bottom: 6px;
             font-size: 14px;
@@ -671,6 +757,7 @@
                                         <u>Hyperparameters</u>: 
 
                                         <ol type="a">
+                                            <br>
                                             <li>
                                                 Penalty: Type of regularization (L1, L2, or Elasticnet).
                                             </li>
@@ -698,7 +785,7 @@
                                             <!-- <caption>Hyperparameter Settings</caption> -->
                                             <tr>
                                                 <th>Hyperparameter</th>
-                                                <th>Value</th>
+                                                <th>Chosen Value</th>
                                             </tr>
                                             <tr>
                                                 <td>Penalty</td>
@@ -875,6 +962,110 @@
 
                                 </ul>
                         </li>
+                        <br>
+
+                        <li>
+                            <strong> Decision Tree </strong>
+                            <ul>
+                                <br>
+                                <li>
+                                    <u>Hyperparameters</u>:
+                                    
+
+                                    <ol type="a">
+                                        <br>
+                                        <li>
+                                            Max Depth: Maximum depth of the tree allowed
+                                        </li>
+
+                                        <li>
+                                            Min Samples Split: Minimum number of samples required to split the node
+                                        </li>
+
+                                        <li>
+                                            Min Sample Leaf: Minimum number of samples required to be present in the leaf nodes post splitting
+                                        </li>
+
+                                        <li>
+                                            Max features: The max number of features to be used during splitting (e.g., integer, sqrt, log2)
+                                        </li>
+
+                                        <li>
+                                            Criterion: Function used to measure the quality of a split (e.g., gini, entropy)
+                                        </li>
+                                    </ol>
+                                    <table class="decision-tree-hyperparam-table">
+                                        <!-- <caption>Hyperparameter Settings</caption> -->
+                                        <tr>
+                                            <th>Hyperparameter</th>
+                                            <th>Chosen Value</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Max Depth</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Min Samples Split</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Min Sample Leaf</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Max Featres</td>
+                                            <td>sqrt</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Criterion</td>
+                                            <td>gini</td>
+                                        </tr>
+                                    </table>
+                                </li>
+
+                                <br>
+                                <li>
+                                        <u>Obtained metrics</u>:  
+                                </li>
+                            
+                                    <div class="decision-tree-metrics-container">
+                                        <figure>
+                                            <img src="figures/decision-tree-roc-curves.jpeg" alt="ROC curves">
+                                        </figure>
+
+                                        <figure>
+                                            <img src="figures/decision-tree-confusion-matrix.png" alt="Confusion matrix">
+                                        </figure>
+
+                                        <div class="table-wrapper">
+                                            <table class="decision-tree-classification-report">
+                                            <caption>Classification Report (Weighted AUROC: 0.9475)</caption>
+                                            <thead>
+                                                <tr>
+                                                <th>Class</th>
+                                                <th>Precision</th>
+                                                <th>Recall</th>
+                                                <th>F1-Score</th>
+                                                <th>Support</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Basal</td><td>0.56</td><td>0.54</td><td>0.55</td><td>37</td></tr>
+                                                <tr><td>Her2</td><td>0.50</td><td>0.63</td><td>0.56</td><td>51</td></tr>
+                                                <tr><td>LumA</td><td>0.70</td><td>0.40</td><td>0.51</td><td>127</td></tr>
+                                                <tr><td>LumB</td><td>0.63</td><td>0.63</td><td>0.63</td><td>92</td></tr>
+                                                <tr><td>Normal</td><td>0.19</td><td>0.42</td><td>0.26</td><td>31</td></tr>
+                                                <tr><td>Claudin-low</td><td>0.48</td><td>0.54</td><td>0.51</td><td>39</td></tr>
+                                                <tr class="highlight"><td>Accuracy</td><td colspan="3">0.52</td><td>377</td></tr>
+                                                <tr class="highlight"><td>Macro Avg</td><td>0.51</td><td>0.53</td><td>0.50</td><td>377</td></tr>
+                                                <tr class="highlight"><td>Weighted Avg</td><td>0.58</td><td>0.52</td><td>0.53</td><td>377</td></tr>
+                                            </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                            </ul>
+                        </li>
+                        
                     </ol>
         </section>
 
