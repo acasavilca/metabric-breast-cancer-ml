@@ -212,6 +212,44 @@
             background-color: #f1faff;
         }
 
+        .svm-hyperparam-table {
+            border-collapse: collapse;
+            width: 17%;
+            /* margin: 20px auto; */
+            margin-top: 10px;
+            margin-left: 2.5%;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .svm-hyperparam-table caption {
+            caption-side: top;
+            text-align: center;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .svm-hyperparam-table th,
+        .svm-hyperparam-table td {
+            text-align: center;
+            /* padding: 10px 14px; */
+            border-bottom: 1px solid #ddd;
+            font-size: 0.75em;
+        }
+
+        .svm-hyperparam-table th {
+            background-color: #203f61;
+            font-weight: bold;
+            font-size: 0.8em;
+            color:white;
+        }
+
+        .svm-hyperparam-table tr:hover {
+            background-color: #f1faff;
+        }
+
 
         .logistic-regression-metrics-container {
             display: flex;
@@ -400,6 +438,54 @@
         }
 
         table.gbdt-classification-report caption {
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .svm-metrics-container {
+            display: flex;
+            /* gap: 10px; */
+            margin-bottom: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .svm-metrics-container figure,
+        .svm-metrics-container .table-wrapper {
+            width: 33%;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .svm-metrics-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        table.svm-classification-report {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        table.svm-classification-report th,
+        table.svm-classification-report td {
+            border: 1px solid #ccc;
+            padding: 6px 8px;
+            text-align: center;
+        }
+
+        table.svm-classification-report th {
+            background-color: #03376e;
+            color:white;
+        }
+
+        table.svm-classification-report caption {
             font-weight: bold;
             margin-bottom: 6px;
             font-size: 14px;
@@ -1486,6 +1572,127 @@
                                                 <tr class="highlight"><td>Accuracy</td><td colspan="3">0.77</td><td>377</td></tr>
                                                 <tr class="highlight"><td>Macro Avg</td><td>0.77</td><td>0.70</td><td>0.72</td><td>377</td></tr>
                                                 <tr class="highlight"><td>Weighted Avg</td><td>0.77</td><td>0.77</td><td>0.76</td><td>377</td></tr>
+                                            </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong> Support Vector Machine (SVM) </strong>
+                            <ul>
+                                <br>
+                                <li>
+                                    <u>Hyperparameters</u>:
+                                    
+
+                                    <ol type="a">
+                                        <br>
+                                        <li>
+                                            Kernel: Type of kernel used (linear, RBF, etc.)
+                                        </li>
+
+                                        <li>
+                                            C: Regularization parameter, where the strength is inversely proportional to the value
+                                        </li>
+
+                                        <li>
+                                            Gamma: Kernel coefficient for RBF, poly, and sigmoid [not applicable for 'linear' kernel]
+                                        </li>
+
+                                        <li>
+                                            Tolerance: Threshold for stopping criteria
+                                        </li>
+
+                                        <li>
+                                            Degree: Degree of polynomial to be used if kernel is 'poly'
+
+                                        </li>
+
+                                        <li>
+                                            Coef0: Used when kernel is either 'poly' or 'sigmoid', an independent term for the kernel
+                                        </li>
+
+                                        <li>
+                                            Probability: Flag to enable to disable generation of predicted probabilities
+                                        </li>
+
+                                        
+                                    </ol>
+                                    <table class="svm-hyperparam-table">
+                                        <!-- <caption>Hyperparameter Settings</caption> -->
+                                        <tr>
+                                            <th>Hyperparameter</th>
+                                            <th>Chosen Value</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Kernel</td>
+                                            <td>RBF</td>
+                                        </tr>
+                                        <tr>
+                                            <td>C</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gamma</td>
+                                            <td>0.001</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tolerance</td>
+                                            <td>0.001</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Degree</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Coef0</td>
+                                            <td>0.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Probability</td>
+                                            <td>True</td>
+                                        </tr>
+                                    </table>
+                                </li>
+
+                                <br>
+                                <li>
+                                        <u>Obtained metrics</u>:  
+                                </li>
+                            
+                                    <div class="svm-metrics-container">
+                                        <figure>
+                                            <img src="figures/svm-roc-curves.jpeg" alt="ROC curves">
+                                        </figure>
+
+                                        <figure>
+                                            <img src="figures/svm-confusion-matrix.png" alt="Confusion matrix">
+                                        </figure>
+
+                                        <div class="table-wrapper">
+                                            <table class="svm-classification-report">
+                                            <caption>Classification Report (Weighted AUROC: 0.9475)</caption>
+                                            <thead>
+                                                <tr>
+                                                <th>Class</th>
+                                                <th>Precision</th>
+                                                <th>Recall</th>
+                                                <th>F1-Score</th>
+                                                <th>Support</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Basal</td><td>0.82</td><td>0.76</td><td>0.79</td><td>37</td></tr>
+                                                <tr><td>Her2</td><td>0.66</td><td>0.78</td><td>0.71</td><td>51</td></tr>
+                                                <tr><td>LumA</td><td>0.86</td><td>0.75</td><td>0.80</td><td>127</td></tr>
+                                                <tr><td>LumB</td><td>0.75</td><td>0.83</td><td>0.78</td><td>92</td></tr>
+                                                <tr><td>Normal</td><td>0.53</td><td>0.58</td><td>0.55</td><td>31</td></tr>
+                                                <tr><td>Claudin-low</td><td>0.83</td><td>0.77</td><td>0.80</td><td>39</td></tr>
+                                                <tr class="highlight"><td>Accuracy</td><td colspan="3">0.76</td><td>377</td></tr>
+                                                <tr class="highlight"><td>Macro Avg</td><td>0.74</td><td>0.74</td><td>0.74</td><td>377</td></tr>
+                                                <tr class="highlight"><td>Weighted Avg</td><td>0.77</td><td>0.76</td><td>0.76</td><td>377</td></tr>
                                             </tbody>
                                             </table>
                                         </div>
