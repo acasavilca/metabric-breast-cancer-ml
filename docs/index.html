@@ -60,11 +60,44 @@
             margin: 0;
         }
 
-        /* .viz-block figcaption {
-            font-size: 13px;
-            margin-top: 5px;
-            color: #555;
-        } */
+        .logistic-regression-hyperparam-table {
+            border-collapse: collapse;
+            width: 15%;
+            /* margin: 20px auto; */
+            margin-top: 10px;
+            margin-left: 2.5%;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logistic-regression-hyperparam-table caption {
+            caption-side: top;
+            text-align: center;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .logistic-regression-hyperparam-table th,
+        .logistic-regression-hyperparam-table td {
+            text-align: center;
+            /* padding: 10px 14px; */
+            border-bottom: 1px solid #ddd;
+            font-size: 0.75em;
+        }
+
+        .logistic-regression-hyperparam-table th {
+            background-color: #203f61;
+            font-weight: bold;
+            font-size: 0.8em;
+            color:white;
+        }
+
+        .logistic-regression-hyperparam-table tr:hover {
+            background-color: #f1faff;
+        }
+
         .logistic-regression-metrics-container {
             display: flex;
             /* gap: 10px; */
@@ -633,6 +666,71 @@
                             <strong> Logistic Regression </strong> 
                                 
                                 <ul>
+                                    <br>
+                                    <li>
+                                        <u>Hyperparameters</u>: 
+
+                                        <ol type="a">
+                                            <li>
+                                                Penalty: Type of regularization (L1, L2, or Elasticnet).
+                                            </li>
+                                            <li>
+                                                Solver : Optimization algorithm used to fit the model (e.g., liblinear, saga)
+                                            </li>
+                                            <li>
+                                                C: Inverse of regularization strength (smaller values show stronger regularization)
+                                            </li>
+                                            <li>
+                                                Tolerance: Threshold for stopping the optimization loop
+                                            </li>
+                                            <li>
+                                                Fit Intercept: Whether to use a non-zero intercept term
+                                            </li>
+                                            <li>
+                                                Max iter: Maximum number of iterations allowed during the optimization process
+                                            </li>
+                                            <li>
+                                                Multi-class: Method chosen for multi-class classification ('ovr' which builds multiple binary classifiers, 'multinomial' which uses softmax function)
+                                            </li>
+                                        </ol>
+
+                                        <table class="logistic-regression-hyperparam-table">
+                                            <!-- <caption>Hyperparameter Settings</caption> -->
+                                            <tr>
+                                                <th>Hyperparameter</th>
+                                                <th>Value</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Penalty</td>
+                                                <td>L2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Solver</td>
+                                                <td>Newton-cg</td>
+                                            </tr>
+                                            <tr>
+                                                <td>C</td>
+                                                <td>0.0464</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tolerance</td>
+                                                <td>0.0001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fit Intercept</td>
+                                                <td>TRUE</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Max Iter</td>
+                                                <td>1000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Multi-class</td>
+                                                <td>Multinomial</td>
+                                            </tr>
+                                        </table>
+                                    </li>
+
                                     <br>
                                     <li>
                                         <u>Obtained metrics</u>: The model displays satisfactory results, with an overall testing AUROC of 0.949 and overall testing accuracy of 76%. The model shows high F1 scores per class (except class 'normal'), macro aggregated F1 score  and weighted F1 score, thus showing good discriminatory power. The class 'normal' shows the lowest F1 score. Upon studying the confusion matrix, the model seems to misclassify 'normal' cases as 'LumA', 'Claudin-low' or 'Her2'. Additionally, the model misclassifies 'LumA' instances as either 'normal' or 'LumB'. 
