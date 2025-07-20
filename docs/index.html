@@ -136,6 +136,44 @@
             background-color: #f1faff;
         }
 
+        .random-forest-hyperparam-table {
+            border-collapse: collapse;
+            width: 17%;
+            /* margin: 20px auto; */
+            margin-top: 10px;
+            margin-left: 2.5%;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .random-forest-hyperparam-table caption {
+            caption-side: top;
+            text-align: center;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .random-forest-hyperparam-table th,
+        .random-forest-hyperparam-table td {
+            text-align: center;
+            /* padding: 10px 14px; */
+            border-bottom: 1px solid #ddd;
+            font-size: 0.75em;
+        }
+
+        .random-forest-hyperparam-table th {
+            background-color: #203f61;
+            font-weight: bold;
+            font-size: 0.8em;
+            color:white;
+        }
+
+        .random-forest-hyperparam-table tr:hover {
+            background-color: #f1faff;
+        }
+
         .logistic-regression-metrics-container {
             display: flex;
             /* gap: 10px; */
@@ -227,6 +265,54 @@
         }
 
         table.decision-tree-classification-report caption {
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .random-forest-metrics-container {
+            display: flex;
+            /* gap: 10px; */
+            margin-bottom: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .random-forest-metrics-container figure,
+        .random-forest-metrics-container .table-wrapper {
+            width: 33%;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .random-forest-metrics-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        table.random-forest-classification-report {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        table.random-forest-classification-report th,
+        table.random-forest-classification-report td {
+            border: 1px solid #ccc;
+            padding: 6px 8px;
+            text-align: center;
+        }
+
+        table.random-forest-classification-report th {
+            background-color: #03376e;
+            color:white;
+        }
+
+        table.random-forest-classification-report caption {
             font-weight: bold;
             margin-bottom: 6px;
             font-size: 14px;
@@ -1066,6 +1152,131 @@
                             </ul>
                         </li>
                         
+                        <li>
+                            <strong> Random Forest </strong>
+                            <ul>
+                                <br>
+                                <li>
+                                    <u>Hyperparameters</u>:
+                                    
+
+                                    <ol type="a">
+                                        <br>
+                                        <li>
+                                            N Estimators: Number of trees/estimators in the forest
+                                        </li>
+
+                                        <li>
+                                            Min Samples Split: Minimum number of samples required to split the node
+                                        </li>
+
+                                        <li>
+                                            Min Sample Leaf: Minimum number of samples required to be present in the leaf nodes post splitting
+                                        </li>
+
+                                        <li>
+                                            Max features: The max number of features to be used during splitting (e.g., integer, sqrt, log2)
+                                        </li>
+
+                                        <li>
+                                            Max Depth: Maximum depth of the tree allowed
+                                        </li>
+
+                                        <li>
+                                            Class weights: Weights assigned to different classes, controls the level of importance to be paid to each class. When set to balanced, the values are inversely proportional to their frequencies
+                                        </li>
+
+                                        <li>
+                                            Bootstrap: Whether or not to use bootstrapped samples
+                                        </li>
+
+                                        <li>
+                                            OOB score: To use out-of-bag samples to assess the generalizability
+                                        </li>
+                                    </ol>
+                                    <table class="random-forest-hyperparam-table">
+                                        <!-- <caption>Hyperparameter Settings</caption> -->
+                                        <tr>
+                                            <th>Hyperparameter</th>
+                                            <th>Chosen Value</th>
+                                        </tr>
+                                        <tr>
+                                            <td>N Estimators</td>
+                                            <td>1000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Min Samples Split</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Min Sample Leaf</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Max Featres</td>
+                                            <td>log2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Max Depth</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Class Weights</td>
+                                            <td>balanced</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bootstrap</td>
+                                            <td>true</td>
+                                        </tr>
+                                        <tr>
+                                            <td>OOB Score</td>
+                                            <td>true</td>
+                                        </tr>
+                                    </table>
+                                </li>
+
+                                <br>
+                                <li>
+                                        <u>Obtained metrics</u>:  
+                                </li>
+                            
+                                    <div class="random-forest-metrics-container">
+                                        <figure>
+                                            <img src="figures/random-forest-roc-curves.jpeg" alt="ROC curves">
+                                        </figure>
+
+                                        <figure>
+                                            <img src="figures/random-forest-confusion-matrix.png" alt="Confusion matrix">
+                                        </figure>
+
+                                        <div class="table-wrapper">
+                                            <table class="random-forest-classification-report">
+                                            <caption>Classification Report (Weighted AUROC: 0.9475)</caption>
+                                            <thead>
+                                                <tr>
+                                                <th>Class</th>
+                                                <th>Precision</th>
+                                                <th>Recall</th>
+                                                <th>F1-Score</th>
+                                                <th>Support</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Basal</td><td>0.87</td><td>0.73</td><td>0.79</td><td>37</td></tr>
+                                                <tr><td>Her2</td><td>0.69</td><td>0.73</td><td>0.70</td><td>51</td></tr>
+                                                <tr><td>LumA</td><td>0.74</td><td>0.89</td><td>0.81</td><td>127</td></tr>
+                                                <tr><td>LumB</td><td>0.78</td><td>0.86</td><td>0.82</td><td>92</td></tr>
+                                                <tr><td>Normal</td><td>1.00</td><td>0.19</td><td>0.32</td><td>31</td></tr>
+                                                <tr><td>Claudin-low</td><td>0.82</td><td>0.69</td><td>0.75</td><td>39</td></tr>
+                                                <tr class="highlight"><td>Accuracy</td><td colspan="3">0.77</td><td>377</td></tr>
+                                                <tr class="highlight"><td>Macro Avg</td><td>0.82</td><td>0.68</td><td>0.70</td><td>377</td></tr>
+                                                <tr class="highlight"><td>Weighted Avg</td><td>0.79</td><td>0.77</td><td>0.75</td><td>377</td></tr>
+                                            </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                            </ul>
+                        </li>
                     </ol>
         </section>
 
