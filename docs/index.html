@@ -1812,7 +1812,19 @@
                 </figure>
             </div>
 
-            Analysis of the METABRIC dataset shows that the breast-cancer gene-expression space is largely linearly separable, a finding supported by our PCA / UMAP projections. Among the machine learning models evaluated, a support vector machine with the radial-basis function kernel delivered the best results, with logistic regression close behind - further confirming the dataset's linear separability. Most errors were made for classes 'LumA' and 'Normal', with both support vector machines and logistic regression misclassifying at similar rates. Further, the decision tree classifier produced the worst results, which we attribute to underfitting; analysis revealed training accuracy rising sharply while validation AUROC stagnated, signalling that a deeper tree would likely result in over-fitting.
+            Analysis of the METABRIC dataset shows that the breast-cancer gene-expression space is largely linearly separable, a finding supported by our PCA / UMAP projections. Among the machine learning models evaluated, a support vector machine with the radial-basis function kernel delivered the best results, with logistic regression close behind - further confirming the dataset's linear separability. Most errors were made for classes 'LumA' and 'Normal', with both support vector machines and logistic regression misclassifying at similar rates.
+
+            <br><br>
+
+            SVM was the best model according to weighted AUROC score (0.9514), with LR right behind with an AUROC score of 0.9475. DT had the lowest metrics across the board. According to the F1 per class plot, LR wins on 3 classes (Basal, Claudin-low & Normal), RF wins LumB and tied w/GBDT on LumA, and GBDT wins Her2. SVM sits firmly in the middle, and once again DT lags far behind.
+
+            <br><br>
+
+            We attribute DT's poor performance to underfitting as observed with a steep increase in training accuracy but a flat validation AUROC. This trend indicates that the model was able to capture trends in the training data, but did not generalize, and further depth of the tree would probably cause overfitting. The tree depth was very shallow, which created high bias since each split was only capable of using a small number of most evident features, limiting the ability of the model to learn complex interactions. Conversely, shallow trees (depth = 5 or less) were also applied in RF and GBDT, yet these methods performed better because they are ensemble methods. These models enabled later trees (or trees trained on other bootstrap samples) to search over other features and interactions because they combined hundreds of trees. Bootstrap sampling and feature bagging in Random Forest contributed to making it less sensitive to noise and better at generalization, and GBDT managed to turn residual errors into beneficial structure by bias-correcting trees iteratively.
+
+            <br><br>
+
+            For future work, we can work further on hyperparameter tuning our top models. In addition, the current pre-processing pipeline is one of many possibilities and there are more robust imputation methods. However, they require bettercomputational platforms and the current platform was meant not to be too computationally heavy. We could also try differnt correlation handling techniques, as well as different scaling methods. We also excluded mutation data as we already had a high number of features to data points, so future work could include these features. Despite these possibilities, our project robustly covers the best data science practices and we have generated five decent models with our top ones giving results that are consistent with clinical data.
 
             
         </section>
@@ -1949,7 +1961,7 @@
                 </tr>
                 <tr>
                     <td>Abhishek Vijeev</td>
-                    <td>EDA, data pre-processing, website</td>
+                    <td>EDA, data pre-processing, SVM, website</td>
                 </tr>
                 <tr>
                     <td>Celine M Al-Noubani</td>
@@ -1957,7 +1969,7 @@
                 </tr>
                 <tr>
                     <td>FNU Naga Nishkala</td>
-                    <td>EDA, data pre-processing</td>
+                    <td>EDA, data pre-processing, GBDT, DT</td>
                 </tr>
                 <tr>
                     <td>Luis Andrés Casavilca</td>
