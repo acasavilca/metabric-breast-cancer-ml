@@ -1745,6 +1745,11 @@
                     </ol>
         </section>
 
+        <section id="conclusion">
+            <h2> Conclusion </h2>
+            Analysis of the METABRIC dataset shows that the breast-cancer gene-expression space is largely linearly separable, a finding supported by our PCA / UMAP projections. Among the machine learning models evaluated, a support vector machine with the radial-basis function kernel delivered the best results, with logistic regression close behind - further confirming the dataset's linear separability. Most errors were made for classes 'LumA' and 'Normal', with both support vector machines and logistic regression misclassifying at similar rates. Further, the decision tree classifier produced the worst results, which we attribute to underfitting; analysis revealed training accuracy rising sharply while validation AUROC stagnated, signalling that a deeper tree would likely result in over-fitting.
+        </section>
+
 
         
         <section id="references">
