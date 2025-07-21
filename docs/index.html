@@ -1799,7 +1799,22 @@
 
         <section id="conclusion">
             <h2> Conclusion </h2>
+
+            <div style="display: flex; gap: 100px; margin-bottom: 30px;">
+                <figure style="text-align: center; width: 33%;">
+                    <img src="figures/conclusion-f1.png" style="width: 100%; height: auto;">
+                    <figcaption>Figure 18: F1-Scores Per Class</figcaption>
+                </figure>
+
+                <figure style="text-align: center; width: 33%;">
+                    <img src="figures/conclusion-weighted-metrics.png" style="width: 100%; height: auto;">
+                    <figcaption>Figure 19: Weighted Metrics</figcaption>
+                </figure>
+            </div>
+
             Analysis of the METABRIC dataset shows that the breast-cancer gene-expression space is largely linearly separable, a finding supported by our PCA / UMAP projections. Among the machine learning models evaluated, a support vector machine with the radial-basis function kernel delivered the best results, with logistic regression close behind - further confirming the dataset's linear separability. Most errors were made for classes 'LumA' and 'Normal', with both support vector machines and logistic regression misclassifying at similar rates. Further, the decision tree classifier produced the worst results, which we attribute to underfitting; analysis revealed training accuracy rising sharply while validation AUROC stagnated, signalling that a deeper tree would likely result in over-fitting.
+
+            
         </section>
 
 
@@ -1973,7 +1988,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/decision-tree-most-informative-features.png" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 18: Decision Tree Top 10 Most Informative Features Per Class</figcaption>
+                                    <figcaption>Figure 20: Decision Tree Top 10 Most Informative Features Per Class</figcaption>
                                 </figure>
                             </div>
 
@@ -2044,7 +2059,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/decision-tree-boxplots.jpeg" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 19: Decision Tree Boxplots for Top 6 Genes</figcaption>
+                                    <figcaption>Figure 21: Decision Tree Boxplots for Top 6 Genes</figcaption>
                                 </figure>
                             </div>
                         </ul>
@@ -2064,7 +2079,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/random-forest-most-informative-features.png" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 20: Random Forest Top 10 Most Informative Features Per Class</figcaption>
+                                    <figcaption>Figure 22: Random Forest Top 10 Most Informative Features Per Class</figcaption>
                                 </figure>
                             </div>
 
@@ -2146,7 +2161,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/random-forest-boxplots.jpeg" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 21: Random Forest Boxplots for Top 6 Genes</figcaption>
+                                    <figcaption>Figure 23: Random Forest Boxplots for Top 6 Genes</figcaption>
                                 </figure>
                             </div>
                         </ul>
@@ -2164,7 +2179,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;justify-content: center">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/gbdt-most-informative-features.png" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 22: Gradient Boosted Decision Tree Top 10 Most Informative Features Per Class</figcaption>
+                                    <figcaption>Figure 24: Gradient Boosted Decision Tree Top 10 Most Informative Features Per Class</figcaption>
                                 </figure>
                             </div>
 
@@ -2234,7 +2249,7 @@
                             <div style="display: flex; gap: 100px; margin-bottom: 30px;">
                                 <figure style="text-align: center; width: 75%; height: 75%;">
                                     <img src="figures/gbdt-boxplots.jpeg" style="width: 100%; height: auto;">
-                                    <figcaption>Figure 23: Gradient Boosted Decision Tree Boxplots for Top 6 Genes</figcaption>
+                                    <figcaption>Figure 25: Gradient Boosted Decision Tree Boxplots for Top 6 Genes</figcaption>
                                 </figure>
                             </div>
                         </ul>
