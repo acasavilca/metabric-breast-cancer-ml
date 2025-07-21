@@ -1733,6 +1733,52 @@
                                             </thead>
                                             <tbody>
                                                 
+                                                <tr>
+                                                <td>bmpr1b</td>
+                                                <td>Negative</td>
+                                                <td>
+                                                Studies have shown that BMPR1B is significantly downregulated in breast cancer samples compared to normal individuals, and this downregulation is associated with a poor prognosis. BMPR1B has been used as a key biomarker to check the efficacy of treatments(5).
+                                                </td>
+                                                <td>Yes, BMPR1B is significantly downregulated in basal-like breast cancers compared to other subtypes (5).</td>
+                                                </tr>
+
+                                                <tr>
+                                                <td>tgfb3</td>
+                                                <td>Positive</td>
+                                                <td>
+                                                TGFB3 is involved in regulating cell cycle arrest, differentiation, immune modulation, and extracellular matrix dynamics. It is frequently described as having a suppressive effect against tumorigenesis in tissues like skin and breast. In normal and early-stage breast tissue, TGFB3 often functions as a tumor suppressor, promoting differentiation and maintaining epithelial integrity(6).
+                                                </td>
+                                                <td>No. TGFB3 expression is documented to be lower in basal-like compared to HER-2 and LumA/B subtypes. In addition, our expression data shows the lowest expression for TGFB3 in basal-like(7).</td>
+                                                </tr>
+
+                                                <tr>
+                                                <td>erbb2</td>
+                                                <td>Negative</td>
+                                                <td>
+                                                In basal-like breast cancer, ERBB2 is typically down regulated rather than upregulated. While ERBB2 amplification and overexpression are characteristic of other breast cancer subtypes, basal-like breast cancer is often HER2-negative, meaning it does not have high levels of the HER2 protein(8).
+                                                </td>
+                                                <td>Yes,  the sign of SHAP value and clinical literature's support that the gene is downregulated match(8).In addition, ERBB2 is the top feature for class HER2 according to the SHAP values obtained from the SVM model.</td>
+                                                </tr>
+
+                                                <tr>
+                                                <td>tgfbr2</td>
+                                                <td>Positive</td>
+                                                <td>
+                                                Loss or mutation of TGFBR2 is linked to the promotion of tumorigenesis in multiple cancers(9).
+                                                </td>
+                                                <td>No, TGFBR2 is significantly downregulated across breast cancer subtypes, including basal-like ones, compared to normal tissue(9).</td>
+                                                </tr>
+
+                                                <tr>
+                                                <td>ccne1</td>
+                                                <td>Positive</td>
+                                                <td>
+                                                CCNE1 encodes Cyclin E1, a regulatory subunit of CDK2 essential for the G1-to-S transition in the cell cycle. Overexpression leads to chromosomal instability, uncontrolled proliferation, and tumorigenesis(10).
+                                                </td>
+                                                <td>Yes, CCNE1 amplification (copy-number gains) occurs in a subset (6-34%) of basal-like/TNBC cases(11).</td>
+                                                </tr>
+
+                                                
                                             </tbody>
                                         </table>
 
@@ -2038,7 +2084,62 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+
+                                    <tr>
+                                    <td>tgfb3</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       TGFB3 is involved in regulating cell cycle arrest, differentiation, immune modulation, and extracellular matrix dynamics. It is frequently described as having a suppressive effect against tumorigenesis in tissues like skin and breast. In normal and early-stage breast tissue, TGFB3 often functions as a tumor suppressor, promoting differentiation and maintaining epithelial integrity (6).
+                                    </td>
+                                    <td>Yes. However, it is worth noting that, although in later-stage cancers, including basal-like subtypes, activation of TGFB3 signaling supports epithelial-to-mesenchymal transition (EMT), which enhances invasion and metastasis, TGFB3 expression is documented to be lower in basal-like compared to HER-2 and LumA/B subtypes (14). In addition, our expression data shows the lowest expression for TGFB3 in basal-like subtype.</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>lfng</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       LFNG cooperates with p53 to act as a tumor suppressor. Its deficiency or loss is associated with epithelial-to-mesenchymal transition, promoting invasion and metastasis, and it induces basal-like breast cancer through cooperation with the Met-Caveolin gene amplicon (23,27).
+                                    </td>
+                                    <td>Yes. In basal-like breast cancers, LFNG (Lunatic Fringe) is consistently expressed at a low level (down-regulated) (23).</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>gata3</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       GATA3 is a transcription factor involved in the differentiation and growth of luminal epithelial cells in breast tissue. It is highly expressed in luminal breast cancer subtypes (28).
+                                    </td>
+                                    <td>Yes. GATA3 insufficiency is associated with luminal-to-basal transformation and promotes the basal-like subtype in cooperation with other tumor suppressors (29).</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>ccne1</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       CCNE1 encodes Cyclin E1, a regulatory subunit of CDK2 essential for the G1-to-S transition in the cell cycle. Overexpression leads to chromosomal instability, uncontrolled proliferation, and tumorigenesis (10).
+                                    </td>
+                                    <td>No. CCNE1 amplification (copy-number gains) occurs in a subset (6-34%) of basal-like/TNBC cases, and it is associated with poor prognosis of these cancer subtypes (11).</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>egfr</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       Tyrosine kinase growth factor. Correlated with poor survival rate and frequent relapses. Overactivation results in aberrant signaling and uncontrolled cell growth and proliferation (13,16).
+                                    </td>
+                                    <td>No. It is known to be upregulated in basal-like subtypes and is used, along with CK5/6,  for clinical immunohistochemical classification of basal-like subtypes (13,16).</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>ar</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       Androgen receptor. Its role in the context of breast cancer subtypes is context-dependent. For the basal-like subtype, its expression, when present, is associated with better prognosis, while its absence is a hallmark of poor prognosis and high aggressiveness (24).
+                                    </td>
+                                    <td>Yes. It can expressed in lower levels than in HER2 or luminal subtypes (25). It can also be completely absent in basal-like subtypes (61% of basal-like cancers), with this loss of expression being associated with poor prognosis in this subtype (26).</td>
+                                    </tr>
+
+
                                 </tbody>
                             </table>
 
@@ -2083,7 +2184,50 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    <tr>
+                                    <td>nrip1</td>
+                                    <td>Positive</td>
+                                    <td>
+                                       High expression in Lum subtypes, supporting cell proliferation. Although not among the top ten genes in LumA/B in our model, they have the largest positive coefficients in these subtypes compared to the other subtypes (12).
+                                    </td>
+                                    <td>No, clinical literature shows this gene to be down-regulated, but the sign of the SHAP value is positive (12).</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>npnt</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       Extracellular matrix protein involved in bone formation, whose downregulation reduces metastatic spread to the bone (15).
+                                    </td>
+                                    <td>No clinical data support differential expression in the basal-like subtype.</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>erbb2</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       In basal-like breast cancer, ERBB2 is typically down-regulated rather than up-regulated. While ERBB2 amplification and overexpression are characteristic of other breast cancer subtypes, basal-like breast cancer is often HER2-negative, meaning it does not have high levels of the HER2 protein (8).
+                                    </td>
+                                    <td>The sign of the SHAP value is positive, and clinical literature supports that the gene is downregulated (8). Hence, there is a mismatch. ERBB2 is one of the top feature for class HER2 according to the SHAP values obtained from the DT model.</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>lfng</td>
+                                    <td>Positive</td>
+                                    <td>
+                                       In basal-like breast cancers, LFNG (Lunatic Fringe) is consistently expressed at a low level (23,27).
+                                    </td>
+                                    <td>The sign of the SHAP value is positive and clinical literature supports that the gene is downregulated (23,27). Hence, there is a mismatch.</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>bmpr1b</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       Studies have shown that BMPR1B is significantly downregulated in breast cancer samples compared to normal individuals, and this downregulation is associated with a poor prognosis. BMPR1B has been used as a key biomarker to check the efficacy of treatments (5).
+                                    </td>
+                                    <td>Yes, the sign of SHAP value and clinical literature's support that the gene is downregulated match (5).</td>
+                                    </tr>
                                 </tbody>
                             </table>
 
