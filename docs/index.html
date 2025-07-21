@@ -1947,7 +1947,51 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    <tr>
+                                    <td>erbb3</td>
+                                    <td>Negative</td>
+                                    <td>
+                                        ERBB3 is highly expressed in LumA and LumB classes of breast cancer (21).
+                                    </td>
+                                    <td>No crisp clinical literature was found on the expression of ERBB3 gene in basal-like class (21).</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>notch1</td>
+                                    <td>Positive</td>
+                                    <td>
+                                       NOTCH1 is upregulated in basal class of breast cancer (22).
+                                    </td>
+                                    <td>The sign of the SHAP value is positive, and clinical literature supports that the gene is downregulated (22). Hence, there is a mismatch.</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>erbb2</td>
+                                    <td>Positive</td>
+                                    <td>
+                                       In basal-like breast cancer, ERBB2 is typically down-regulated rather than up-regulated. While ERBB2 amplification and overexpression are characteristic of other breast cancer subtypes, basal-like breast cancer is often HER2-negative, meaning it does not have high levels of the HER2 protein (8).
+                                    </td>
+                                    <td>The sign of the SHAP value is positive, and clinical literature supports that the gene is downregulated (8). Hence, there is a mismatch. ERBB2 is one of the top feature for class HER2 according to the SHAP values obtained from the DT model.</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>lfng</td>
+                                    <td>Positive</td>
+                                    <td>
+                                       In basal-like breast cancers, LFNG (Lunatic Fringe) is consistently expressed (down regulated) at a low level (23).
+                                    </td>
+                                    <td>The sign of the SHAP value is positive and clinical literature supports that the gene is downregulated (23). Hence, there is a mismatch.</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>ar</td>
+                                    <td>Negative</td>
+                                    <td>
+                                       Androgen receptor. Its role in the context of breast cancer subtypes is context-dependent. For the basal-like subtype, its expression, when present, is associated with better prognosis, while its absence is a hallmark of poor prognosis and high aggressiveness (24).
+                                    </td>
+                                    <td>Yes. It can expressed in lower levels than in HER2 or luminal subtypes (25). It can also be completely absent in basal-like subtypes (61% of basal-like cancers), with this loss of expression being associated with poor prognosis in this subtype (26).</td>
+                                    </tr>
+
                                 </tbody>
                             </table>
 
