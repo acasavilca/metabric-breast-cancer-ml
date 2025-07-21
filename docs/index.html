@@ -1153,55 +1153,61 @@
                                                     <td>nrip1</td>
                                                     <td>Negative</td>
                                                     <td>
-                                                        High expression in Lum subtypes, supporting cell proliferation. Although not among the top ten genes in LumA/B in our model, they have the largest positive coefficients in these subtypes compared to the other subtypes [6].
+                                                        High expression in Lum subtypes, supporting cell proliferation. Although not among the top ten genes in LumA/B in our model, they have the largest positive coefficients in these subtypes compared to the other subtypes (12).
                                                     </td>
-                                                    <td>Yes. Known to be lowly expressed in basal-like subtype [6].</td>
+                                                    <td>Yes. Known to be lowly expressed in basal-like subtype (12).</td>
                                                     </tr>
                                                     <tr>
                                                     <td>kit</td>
                                                     <td>Positive</td>
                                                     <td>
-                                                        Tyrosine kinase growth factor, co-expressed with EGFR in basal-like subtypes [7].
+                                                        Tyrosine kinase growth factor, co-expressed with EGFR in basal-like subtypes (13).
                                                     </td>
-                                                    <td>Yes. Overexpressed in basal-like subtype [7].</td>
+                                                    <td>Yes. Overexpressed in basal-like subtype (13).</td>
                                                     </tr>
                                                     <tr>
                                                     <td>tgfbr2</td>
                                                     <td>Negative</td>
                                                     <td>
-                                                        Tumor suppressor in normal tissue [8].<br>
+                                                        Tumor suppressor in normal tissue (14). <br>
                                                         Small, almost zero coefficient in “Normal” class in our model.
                                                     </td>
                                                     <td>
-                                                        Yes. Low expression in basal-like tissue compared to normal tissue, but it’s also lowly expressed in other subtypes [8].
+                                                        Yes. Low expression in basal-like tissue compared to normal tissue, but it's also lowly expressed in other subtypes (14).
                                                     </td>
                                                     </tr>
                                                     <tr>
                                                     <td>nptnt</td>
                                                     <td>Negative</td>
                                                     <td>
-                                                        Extracellular matrix protein involved in bone formation whose downregulation reduces metastatic spread to the bone [9].
+                                                        Extracellular matrix protein involved in bone formation whose downregulation reduces metastatic spread to the bone (15).
                                                     </td>
-                                                    <td>No clinical data supporting differential expression in the basal-like subtype.</td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td>chek1</td>
-                                                    <td>Positive</td>
-                                                    <td>
-                                                        Promotes epithelial to mesenchymal transition (EMT) and enhances migration and invasion ability.<br>
-                                                        Correlated with poor survival [10].
-                                                    </td>
-                                                    <td>Yes. Known to be upregulated and a marker for basal-like subtypes [10].</td>
+                                                    <td> Not known to be a marker but consistent with our expression data (box-plots).</td>
                                                     </tr>
                                                     <tr>
                                                     <td>egfr</td>
                                                     <td>Positive</td>
                                                     <td>
-                                                        Tyrosine kinase growth factor.<br>
-                                                        Correlated with poor survival rate and frequent relapses.<br>
-                                                        Overactivation results in aberrant signaling and uncontrolled cell growth and proliferation [11,12].
+                                                        Tyrosine kinase growth factor. Correlated with poor survival rate and frequent relapses. Overactivation results in aberrant signaling and uncontrolled cell growth and proliferation (16,17).
                                                     </td>
-                                                    <td>Yes. Known to be overexpressed [11,12].</td>
+                                                    <td>Yes. Known to be overexpressed.</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>bmpr1b</td>
+                                                    <td>Negative</td>
+                                                    <td>
+                                                        Low expression is associated with poor prognosis and increases the proliferation of breast cancer cells (18).
+                                                    </td>
+                                                    <td>Yes. Know to be downregulated in basal-like subtype compared to other breast cancer subtypes (19).</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                    <td>chek1</td>
+                                                    <td>Positive</td>
+                                                    <td>
+                                                        Promotes epithelial to mesenchymal transition (EMT) and enhances migration and invasion ability. Correlated with poor survival (20).
+                                                    </td>
+                                                    <td>Yes. Known to be upregulated and a marker for basal-like subtypes (20)</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -1213,7 +1219,7 @@
                                                 </figure>
                                             </div>
 
-                                            The coefficient signs for the top 6 features (here, all 6 features are genes) and the nature of those genes (upregulated or downregulated) were consistent, showing that the model captures meaningful patterns and provides the predicted probability. The top six genes with the largest coefficients are consistent with clinical data, i.e., genes with large positive coefficients are known to be upregulated, while those with large negative coefficients are known to be downregulated. The exception was NPNT, whose large negative coefficient is not backed by clinical data, which does not describe any differential expression of this gene in basal-like subtype.
+                                            The coefficient signs for the top features (here, all 6 features are genes) and the nature of those genes (upregulated or downregulated) were consistent, showing that the model captures meaningful patterns and provides the predicted probability. The top genes with the largest coefficients are consistent with clinical data, i.e., genes with large positive coefficients are known to be upregulated, while those with large negative coefficients are known to be downregulated. The exception was NPNT, whose large negative coefficient is not backed by clinical data, which does not describe any differential expression of this gene in basal-like subtype.
                                         </ul>
                                     </li>
 
