@@ -2,7 +2,7 @@
 
 A machine learning project for multi-class breast cancer subtype classification using the METABRIC dataset. Built end-to-end supervised pipelines integrating gene expression (mRNA z-scores) and clinical data, with systematic model comparison and biological validation of feature importance.
 
-📄 [Full Project Report](https://github.com/acasavilca/metabric-breast-cancer-ml/blob/main/docs/Final_Report.pdf) · 🌐 [Project Website](https://github.gatech.edu/pages/lramirez65/CS7641_ML_group3/index.html)
+🌐 [Project Website](https://acasavilca.github.io/metabric-breast-cancer-ml/)
 
 ---
 
