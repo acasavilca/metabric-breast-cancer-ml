@@ -102,4 +102,4 @@ All models tuned via grid/random search with cross-validation:
 
 Luis Andrés Casavilca · Abhishek Vijeev · Celine M. Al-Noubani · FNU Naga Nishkala · Nikhil Sundaram
 
-*Originally developed as a course project for CS7641 Machine Learning at Georgia Institute of Technology.*
+*Originally developed as a course project for CS7641 Machine Learning at the Georgia Institute of Technology.*
