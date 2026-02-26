@@ -47,9 +47,9 @@ All models tuned via grid/random search with cross-validation:
 |---|---|---|
 | Support Vector Machine (RBF kernel) | **0.9514** | 76% |
 | Logistic Regression | 0.9475 | 76% |
-| Random Forest | 0.95 | 77% |
-| Gradient Boosted Decision Trees | 0.94 | 77% |
-| Decision Tree | 0.84 | 52% |
+| Random Forest | 0.9474 | 77% |
+| Gradient Boosted Decision Trees | 0.9449 | 77% |
+| Decision Tree | 0.8379 | 52% |
 
 ### 5. Model Explainability
 - Logistic regression: coefficient magnitude and sign analysis per class
